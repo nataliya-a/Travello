@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Hotels</title>
+  <meta charset="utf-8">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+</head>
+<body>
+
+<!--<div class="jumbotron text-center">-->
+<div>
+  <center>
+  <h1>Showing results for "$search"</h1>
+  </center>
+</div>
+<body>
+  <center>
+    <h3> Hotels: </h3>
+     #foreach($hotel in $hotels)
+    <a href="/hotels" name=$hotel><p>$hotel</p></a>
+    #end
+  </center>
+</body>
+
+</body>
+</html>
