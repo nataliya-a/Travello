@@ -1,0 +1,68 @@
+<head>
+  <title>Hotel Details</title>
+  <meta charset="utf-8">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+</head>
+<body>
+
+<!--<div class="jumbotron text-center">-->
+<div>
+  <center>
+    <h1>$hotel.getHotelName()</h1>
+  </center>
+</div>
+<body>
+<center>
+
+  <p><b>Hotel ID :</b> $hotel.getHotelID()</p>
+  <p><b>Address :</b> $hotel.getAddress()</p>
+    <p><b>City :</b> $hotel.getCity()</p>
+    <p><b>State :</b> $hotel.getState()</p>
+  <p><b>Average Ratings :</b> $rating</p>
+  <p><b>Expedia :</b> <a href=$expediaLink> Click Here </a> </p>
+
+  <hr>
+  <hr>
+  <h3>Add Review:</h3>
+  <form action="hotels?hotelId=$hotel.getHotelID()" method="post">
+    <input type="hidden" name="hotelId" value="$hotel.getHotelID()">
+    <input type="hidden" name="username" value="$username">
+    <textarea rows="1" cols="60" name="title" placeholder="Title" required></textarea> <br><br>
+    <textarea rows="5" cols="60" name="review" placeholder="Review text" required></textarea>
+    <br><br>
+    <input type="submit" value="Submit">
+  </form>
+  <hr>
+  <h2><p><b>Reviews :</b></p></h2>
+  #foreach($review in $reviews)
+  <h4>$review.getTitle()</h4>
+  <p><b>Review </b> by <b style="color: #018AE6;">$review.getUserNickname()</b> on <b>$review.getReviewSubmissionTime()</b></p>
+
+  <p>$review.getReviewText()</p>
+  #if($review.getUserNickname() == $username)
+  <!--  show a button for edit and a button for delete-->
+  <form action="edit" method="get">
+    <input type="hidden" name="hotelId" value="$hotel.getHotelID()">
+    <input type="hidden" name="username" value="$username">
+    <input type="hidden" name="reviewId" value="$review.getReviewID()">
+    <input type="hidden" name="title" value="$review.getTitle()">
+    <input type="hidden" name="reviewText" value="$review.getReviewText()">
+    <input type="submit" name="edit" value="Edit">
+    <input type="submit" name="delete" value="Delete">
+  </form>
+
+  #end
+  <br>
+  #end
+    <form action="logout" method="get">
+      <input  type = "submit" value = "Logout" name = "logout" >
+    </form>
+
+
+</center>
+</body>
+
+</body>
+</html>
