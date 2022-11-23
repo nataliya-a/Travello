@@ -1,30 +1,31 @@
 package hotelapp;
 
-import org.apache.velocity.app.Velocity;
 import org.apache.velocity.app.VelocityEngine;
 import org.eclipse.jetty.server.Server;
 import org.eclipse.jetty.servlet.ServletContextHandler;
-import org.eclipse.jetty.servlet.ServletHandler;
+import org.eclipse.jetty.servlet.ServletHolder;
+
+import javax.servlet.Servlet;
 
 public class HotelServer {
 
 	public static final int PORT = 8090;
 
 	public static void main(String[] args) throws Exception {
-//		Server server = new Server(PORT);
-		// FILL IN CODE, and add more classes as needed
-//		DatabaseHandler dhandler = DatabaseHandler.getInstance();
-//		dhandler.createTable();
+
+		ParseArgs.parseArgs(args);
 
 		Server server = new Server(PORT);
 		ServletContextHandler handler = new ServletContextHandler(ServletContextHandler.SESSIONS);
+
 		handler.addServlet(RegistrationServlet.class, "/register");
 		handler.addServlet(LoginServlet.class, "/login");
 		handler.addServlet(HotelServlet.class, "/hotels");
 		handler.addServlet(HomeServlet.class, "/home");
-		handler.addServlet(ClearCookieServlet.class, "/clear");
+		handler.addServlet(LogoutServlet.class, "/logout");
 		handler.addServlet(SearchServlet.class, "/search");
-//		handler.addServlet(HotelDataServlet.class, "/hoteldata");
+		handler.addServlet(EditReviewServlet.class, "/edit");
+
 
 
 
@@ -32,6 +33,8 @@ public class HotelServer {
 		velocity.init();
 
 		handler.setAttribute("templateEngine", velocity);
+		handler.setAttribute("hotelData", ParseArgs.getHotelData());
+		handler.setAttribute("reviewMapper", ParseArgs.getReviewMapper());
 
 		server.setHandler(handler);
 		server.start();
