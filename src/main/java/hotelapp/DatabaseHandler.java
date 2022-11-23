@@ -9,8 +9,7 @@ import java.util.Properties;
 import java.util.Random;
 
 /**
- *
- * Modified from the example of Prof. Engle
+ * A class that handles all database operations.
  */
 public class DatabaseHandler {
 
@@ -26,7 +25,7 @@ public class DatabaseHandler {
     private DatabaseHandler(String propertiesFile){
         this.config = loadConfigFile(propertiesFile);
         this.uri = "jdbc:mysql://"+ config.getProperty("hostname") + "/" + config.getProperty("username") + "?useUnicode=true&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=UTC";
-        //System.out.println("uri = " + uri);
+
     }
 
     /**
@@ -37,8 +36,12 @@ public class DatabaseHandler {
         return dbHandler;
     }
 
+    /**
+     * Loads the properties file.
+     * @param propertyFile the name of the properties file
+     * @return a "map" of properties
+     */
 
-    // Load info from config file database.properties
     public Properties loadConfigFile(String propertyFile) {
         Properties config = new Properties();
         try (FileReader fr = new FileReader(propertyFile)) {
@@ -51,6 +54,9 @@ public class DatabaseHandler {
         return config;
     }
 
+    /**
+     * Creates a new table in the database.
+     */
     public void createTable() {
         Statement statement;
         try (Connection dbConnection = DriverManager.getConnection(uri, config.getProperty("username"), config.getProperty("password"))) {
@@ -138,14 +144,20 @@ public class DatabaseHandler {
         }
     }
 
+/**
+     * Checks if a user and the password they entered match the one in database.
+     *
+     * @param username - username to check
+     * @param password - password to check
+     * @return true if user exists, false otherwise
+     */
     public boolean authenticateUser(String username, String password) {
         PreparedStatement statement;
         try (Connection connection = DriverManager.getConnection(uri, config.getProperty("username"), config.getProperty("password"))) {
-            //System.out.println("dbConnection successful");
+
             statement = connection.prepareStatement(PreparedStatements.AUTH_SQL);
             String usersalt = getSalt(connection, username);
             String passhash = getHash(password, usersalt);
-
             statement.setString(1, username);
             statement.setString(2, passhash);
             ResultSet results = statement.executeQuery();
@@ -182,10 +194,14 @@ public class DatabaseHandler {
         return salt;
     }
 
+
+    /**
+     * Checks if a user exists in the database.
+     */
     public boolean checkUser(String username) {
         PreparedStatement statement;
         try (Connection connection = DriverManager.getConnection(uri, config.getProperty("username"), config.getProperty("password"))) {
-            //System.out.println("dbConnection successful");
+
             statement = connection.prepareStatement(PreparedStatements.CHECK_USERNAME_SQL);
             statement.setString(1, username);
             ResultSet results = statement.executeQuery();
@@ -196,12 +212,5 @@ public class DatabaseHandler {
         }
     }
 
-        public static void main(String[] args) {
-        DatabaseHandler dhandler = DatabaseHandler.getInstance();
-        dhandler.createTable();
-        System.out.println("created a user table ");
-        dhandler.registerUser("luke", "lukeS1k23w");
-        System.out.println("Registered luke.");
-    }
 }
 
