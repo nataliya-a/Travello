@@ -7,16 +7,45 @@
 <body>
 <center>
   <h1>Register Here!</h1>
+  #if($error)
+    <p style="color:Tomato;">  $error  </p>
+  #end
   <form action = "register" method = "post">
     <label >Enter your username</label> <br>
     <input type="text" placeholder="Enter Username" name="name" required> </br> </br>
     <label >Enter your Password</label> <br>
-    <input type="password" placeholder="Enter Password" name="pass" required> </br> </br>
-<!--    confirm pass-->
+    <input type="password" placeholder="Enter Password" name="pass" onkeyup="validatePassword(this);" required> </br> </br>
+    <p id="invalid-password" style="color: red"></p>
+
     <button type="submit">Register Now!</button>
   </form>
+  #if($message)
+    <p style="color:MediumSeaGreen;">  $message  </p>
+    <p>Please click on Login</p>
+    <a href="login">Login</a>
+  #end
 </center>
 <resource name="style1.css" type="download" location="style1.css">
 </resource>
+
+<script>
+    function validatePassword(password) {
+    console.log("validatePassword");
+        var password = password.value;
+        if (password.length < 8) {
+          document.getElementById("invalid-password").innerHTML = "Password must be at least 8 characters long";
+        }
+        else if (!password.match(/[0-9]+/) || !password.match(/[$@#&!]+/)) {
+          document.getElementById("invalid-password").innerHTML = "Password must contain at least one digit and one special character";
+        }
+        else if (!password.match(/[A-Z]+/)) {
+          document.getElementById("invalid-password").innerHTML = "Password must contain at least one capital letter";
+        }
+        else {
+          document.getElementById("invalid-password").innerHTML = "";
+        }
+    }
+
+</script>
 </body>
 </html>
