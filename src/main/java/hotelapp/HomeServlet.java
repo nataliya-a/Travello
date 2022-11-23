@@ -12,11 +12,16 @@ import java.io.IOException;
 import java.io.PrintWriter;
 import java.io.StringWriter;
 
-import static org.apache.velocity.app.Velocity.getTemplate;
-
+/** Servlet that handles the home page.
+ */
 public class HomeServlet extends HttpServlet {
 
-
+    /**
+     * doGet method for HomeServlet.
+     * @param request
+     * @param response
+     * @throws IOException
+     */
     @Override
     public void doGet (HttpServletRequest request, HttpServletResponse response ) throws IOException {
         response.setContentType("text/html");
@@ -30,6 +35,12 @@ public class HomeServlet extends HttpServlet {
         out.println(writer);
     }
 
+    /**
+     * doPost method for HomeServlet.
+     * @param request
+     * @param response
+     * @throws IOException
+     */
     @Override
     public void doPost(HttpServletRequest request, HttpServletResponse response) throws IOException {
         response.setContentType("text/html");
