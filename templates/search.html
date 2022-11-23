@@ -6,9 +6,11 @@
 </head>
 <body>
 <center>
-    <form action = "search" method = "post">
-        <input type="text" placeholder="Search.." name="search"> <br> <br>
-        <button type="submit">Search</button>
+    <form method = "post">
+        <input action = "search" type="text" placeholder="Search.." name="search">
+        <input type="hidden" name="username" value="$username">
+        <button type="submit">Search</button> <br> <br>
+        <input action = "logout" type = "submit" value = "Logout" name = "logout" >
     </form>
 </center>
 <resource name="style1.css" type="download" location="style1.css">
