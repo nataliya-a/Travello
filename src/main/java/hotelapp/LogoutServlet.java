@@ -6,24 +6,33 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
-import java.io.PrintWriter;
 
-public class ClearCookieServlet extends HttpServlet {
 
+/** Servlet that handles logout.
+ */
+public class LogoutServlet extends HttpServlet {
+    /**
+     * doGet method for LogoutServlet.
+     * @param request
+     * @param response
+     * @throws IOException
+     */
     @Override
     protected void doGet (HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
-        // FILL IN CODE
         // Clear the "username" cookie
 
         response.setContentType("text/html");
         response.setStatus(HttpServletResponse.SC_OK);
         clearCookies(request, response);
-        PrintWriter out = response.getWriter();
-        out.println("Cookie cleared");
         response.sendRedirect("/home");
     }
 
+    /**
+     * Clear the "username" cookie
+     * @param request
+     * @param response
+     */
     public void clearCookies(HttpServletRequest request, HttpServletResponse response) {
 
         Cookie[] cookies = request.getCookies();
