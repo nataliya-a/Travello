@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Edit Review</title>
+</head>
+<body>
+<form action="edit" method="post">
+    <input type="hidden" name="reviewId" value="$reviewId">
+    <input type="hidden" name="hotelId" value="$hotelId">
+    <textarea rows="1" cols="60" name="title" placeholder="Title" required>$title</textarea> <br><br>
+    <textarea rows="5" cols="60" name="reviewText" placeholder="Review text" required>$reviewText</textarea>
+    <br><br>
+    <input type="submit" value="Update Review">
+</form>
+</body>
+</html>
