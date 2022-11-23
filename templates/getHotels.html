@@ -19,8 +19,12 @@
   <center>
     <h3> Hotels: </h3>
      #foreach($hotel in $hotels)
-    <a href="/hotels" name=$hotel><p>$hotel</p></a>
+<!--    //give the user the option to click on the hotel name to get more information-->
+    <a href="hotels?username=$username&hotelId=$hotel.getHotelID()"><p>$hotel.getHotelName()</p></a>
     #end
+    <form action="logout" method="get">
+      <input type = "submit" value = "Logout" name = "logout" >
+    </form>
   </center>
 </body>
 
