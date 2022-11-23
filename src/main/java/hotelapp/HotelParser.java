@@ -16,33 +16,17 @@ import java.util.List;
  * Class that parses the review data and stores the data in a data structure.
  */
 public class HotelParser { // HotelData
-    private Hotel[] hotels = new Hotel[0];
 
-    public Hotel[] parseHotelData(String filePath) { //HotelDataMapped
-        Gson gson = new Gson();
-        //Hotel[] hotels = new Hotel[0];
-        try (FileReader br = new FileReader(filePath)) {
-            JsonParser parser = new JsonParser();
-            JsonObject jo = (JsonObject) parser.parse(br);
-
-            JsonArray jsonArr = jo.getAsJsonArray("sr");
-            //parse latitute and longitude from json file
-
-//            JsonObject job = (JsonObject) jsonArr.get(Integer.parseInt("ll"));
-//            System.out.println(job);
-            hotels = gson.fromJson(jsonArr.toString(), Hotel[].class);
-
-        } catch (IOException e) {
-            System.out.println("Could not read the file: " + e);
-        }
-        return hotels;
-    }
-
+    /**
+     * Parses the hotel data and stores the data in a data structure.
+     * @param filePath
+     * @return List of hotels
+     */
     public List<Hotel> parseHotelDataNew(String filePath) {
         Gson gson = new Gson();
         List<Hotel> hotelsNew = new ArrayList<>();
         try (JsonReader reader = new JsonReader(new FileReader(filePath))) {
-            //parse latitute and longitude from json file
+
             JsonObject jo = gson.fromJson(reader, JsonObject.class);
             JsonArray jsonArr = jo.getAsJsonArray("sr");
             for (int i = 0; i < jsonArr.size(); i++) {

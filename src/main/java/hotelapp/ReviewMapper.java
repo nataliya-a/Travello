@@ -2,6 +2,7 @@ package hotelapp;
 
 import java.util.HashMap;
 import java.util.List;
+import java.util.TreeMap;
 import java.util.TreeSet;
 
 public class ReviewMapper {
@@ -42,6 +43,17 @@ public class ReviewMapper {
 
     public TreeSet<Review> getReviewObject(String hotelId) {
         return reviewsMap.get(hotelId);
+    }
+
+
+
+    public void deleteReview(String hotelId, String reviewId) {
+        reviewsMap.get(hotelId).removeIf(r -> r.getReviewID().equals(reviewId));
+    }
+
+
+    public void addNewReview(String hotelID, Review review) {
+        reviewsMap.get(hotelID).add(review);
     }
 
 

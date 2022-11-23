@@ -52,7 +52,7 @@ public class Review {
     @Override
     public String toString() {
         String str = "";
-        str += "--------------------" + System.lineSeparator();
+//        str += "--------------------" + System.lineSeparator();
         str += "Review by " + userNickname + " on " + reviewSubmissionTime;
         str += System.lineSeparator() + "Rating: " + ratingOverall;
         str += System.lineSeparator() + "ReviewId: " + reviewID;
@@ -104,6 +104,14 @@ public class Review {
 
     public String getUserNickname() {
         return userNickname;
+    }
+
+    /**
+     * Get the review ratingOverall.
+     * @return review ratingOverall
+     */
+    public String getRatingOverall() {
+        return ratingOverall;
     }
 }
 

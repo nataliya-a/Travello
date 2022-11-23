@@ -22,15 +22,7 @@ public class ThreadSafeHotelData extends HotelData {
         }
     }
 
-    /** given a hotelId, return the hotel */
-    public Hotel getHotelObject(String strHotelId) {
-        lock.readLock().lock();
-        try {
-            return super.getHotelObject(strHotelId);
-        } finally {
-            lock.readLock().unlock();
-        }
-    }
+
 
     /** given a list of hotels, add them to the map */
     public void addHotels(Hotel[] hotels) {
@@ -42,16 +34,8 @@ public class ThreadSafeHotelData extends HotelData {
         }
     }
 
-    /** returns a list of all hotel IDs */
 
-    public String[] getAllHotelIDs() {
-        lock.readLock().lock();
-        try {
-            return super.getAllHotelIDs();
-        } finally {
-            lock.readLock().unlock();
-        }
-    }
+
 
 
     /** returns an hotelMap */
@@ -90,6 +74,16 @@ public class ThreadSafeHotelData extends HotelData {
         lock.readLock().lock();
         try {
             return super.getHotelObjectNew(strHotelId);
+        } finally {
+            lock.readLock().unlock();
+        }
+    }
+
+    /** return a list of all the hotels */
+    public List<Hotel> getHotels() {
+        lock.readLock().lock();
+        try {
+            return super.getHotels();
         } finally {
             lock.readLock().unlock();
         }
