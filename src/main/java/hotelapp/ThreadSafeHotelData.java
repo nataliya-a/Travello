@@ -9,7 +9,13 @@ import java.util.concurrent.locks.ReentrantReadWriteLock;
 
 public class ThreadSafeHotelData extends HotelData {
 
+
+
     private ReentrantReadWriteLock lock = new ReentrantReadWriteLock();
+
+    public ThreadSafeHotelData() {
+        super();
+    }
 
 
     /** given a list of hotels, add them to the map */

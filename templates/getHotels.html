@@ -19,7 +19,6 @@
   <center>
     <h3> Hotels: </h3>
      #foreach($hotel in $hotels)
-<!--    //give the user the option to click on the hotel name to get more information-->
     <a href="hotels?username=$username&hotelId=$hotel.getHotelID()"><p>$hotel.getHotelName()</p></a>
     #end
     <form action="logout" method="get">

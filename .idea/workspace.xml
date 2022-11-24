@@ -4,188 +4,13 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="1306db4f-b61b-4225-94e6-3327eef60eb1" name="Changes" comment="imported Review classes from previous projects">
-      <change afterPath="$PROJECT_DIR$/input/reviews/Emeryville/review10323.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/input/reviews/Emeryville/review15674041.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/input/reviews/Emeryville/review17280.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/input/reviews/Emeryville/review547988.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/input/reviews/SanCarlos/review14781.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/input/reviews/SanCarlos/review200649.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/input/reviews/SanFrancisco/FinancialDistrict/review4302.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/input/reviews/SanFrancisco/FishermansWharf/review1047.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/input/reviews/SanFrancisco/FishermansWharf/review20488.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/input/reviews/SanFrancisco/FishermansWharf/review22500.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/input/reviews/SanFrancisco/FishermansWharf/review24625.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/input/reviews/SanFrancisco/FishermansWharf/review422927.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/input/reviews/SanFrancisco/FishermansWharf/review476728.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/input/reviews/SanFrancisco/FishermansWharf/review578899.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/input/reviews/SanFrancisco/Hostels/review14772741.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/input/reviews/SanFrancisco/Hostels/review9491356.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/input/reviews/SanFrancisco/SFOAirport/review1110785.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/input/reviews/SanFrancisco/SFOAirport/review1139289.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/input/reviews/SanFrancisco/SFOAirport/review12345.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/input/reviews/SanFrancisco/SFOAirport/review16955.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/input/reviews/SanFrancisco/SFOAirport/review23838.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/input/reviews/SanFrancisco/SFOAirport/review26500.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/input/reviews/SanFrancisco/SFOAirport/review28502.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/input/reviews/SanFrancisco/SFOAirport/review2981.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/input/reviews/SanFrancisco/SFOAirport/review4044.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/input/reviews/SanFrancisco/SFOAirport/review40443.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/input/reviews/SanFrancisco/SFOAirport/review4705.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/input/reviews/SanFrancisco/SFOAirport/review487.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/input/reviews/SanFrancisco/SFOAirport/review524164.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/input/reviews/SanFrancisco/SFOAirport/review599536.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/input/reviews/SanFrancisco/SFOAirport/review7655.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/input/reviews/SanFrancisco/SFOAirport/review9329.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/input/reviews/SanFrancisco/UnionSq/review150946.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/input/reviews/SanFrancisco/UnionSq/review20547.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/input/reviews/SanFrancisco/UnionSq/review23395.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/input/reviews/SanFrancisco/UnionSq/review24468.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/input/reviews/SanFrancisco/UnionSq/review25622.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/input/reviews/SanFrancisco/UnionSq/review360.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/input/reviews/SanFrancisco/UnionSq/review5883.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/input/reviews/SanFrancisco/UnionSq/review8737.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/input/reviews/SanFrancisco/review1145267.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/input/reviews/SanFrancisco/review1146383.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/input/reviews/SanFrancisco/review11509.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/input/reviews/SanFrancisco/review11523.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/input/reviews/SanFrancisco/review11771.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/input/reviews/SanFrancisco/review11793.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/input/reviews/SanFrancisco/review118232.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/input/reviews/SanFrancisco/review1208461.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/input/reviews/SanFrancisco/review12493.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/input/reviews/SanFrancisco/review12539.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/input/reviews/SanFrancisco/review1321986.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/input/reviews/SanFrancisco/review13950.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/input/reviews/SanFrancisco/review14451.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/input/reviews/SanFrancisco/review14553.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/input/reviews/SanFrancisco/review14781.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/input/reviews/SanFrancisco/review15135.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/input/reviews/SanFrancisco/review1515923.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/input/reviews/SanFrancisco/review15254.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/input/reviews/SanFrancisco/review15769.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/input/reviews/SanFrancisco/review1588312.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/input/reviews/SanFrancisco/review1606984.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/input/reviews/SanFrancisco/review16552.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/input/reviews/SanFrancisco/review17616.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/input/reviews/SanFrancisco/review1766605.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/input/reviews/SanFrancisco/review18200.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/input/reviews/SanFrancisco/review18204.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/input/reviews/SanFrancisco/review18320.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/input/reviews/SanFrancisco/review18437.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/input/reviews/SanFrancisco/review18962.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/input/reviews/SanFrancisco/review19035.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/input/reviews/SanFrancisco/review19842.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/input/reviews/SanFrancisco/review20191.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/input/reviews/SanFrancisco/review20701.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/input/reviews/SanFrancisco/review21073.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/input/reviews/SanFrancisco/review22148.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/input/reviews/SanFrancisco/review22510.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/input/reviews/SanFrancisco/review225819.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/input/reviews/SanFrancisco/review2336.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/input/reviews/SanFrancisco/review23383.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/input/reviews/SanFrancisco/review23406.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/input/reviews/SanFrancisco/review23581.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/input/reviews/SanFrancisco/review23774.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/input/reviews/SanFrancisco/review2406.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/input/reviews/SanFrancisco/review24540.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/input/reviews/SanFrancisco/review24620.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/input/reviews/SanFrancisco/review25271.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/input/reviews/SanFrancisco/review2536795.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/input/reviews/SanFrancisco/review25860.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/input/reviews/SanFrancisco/review26760.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/input/reviews/SanFrancisco/review26945.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/input/reviews/SanFrancisco/review27274.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/input/reviews/SanFrancisco/review28200.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/input/reviews/SanFrancisco/review283107.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/input/reviews/SanFrancisco/review287112.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/input/reviews/SanFrancisco/review287665.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/input/reviews/SanFrancisco/review296720.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/input/reviews/SanFrancisco/review3308.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/input/reviews/SanFrancisco/review3552.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/input/reviews/SanFrancisco/review40682.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/input/reviews/SanFrancisco/review41833.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/input/reviews/SanFrancisco/review42336.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/input/reviews/SanFrancisco/review437098.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/input/reviews/SanFrancisco/review438727.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/input/reviews/SanFrancisco/review4432027.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/input/reviews/SanFrancisco/review444672.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/input/reviews/SanFrancisco/review455591.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/input/reviews/SanFrancisco/review476728.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/input/reviews/SanFrancisco/review5045.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/input/reviews/SanFrancisco/review50993.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/input/reviews/SanFrancisco/review51116.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/input/reviews/SanFrancisco/review519729.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/input/reviews/SanFrancisco/review522505.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/input/reviews/SanFrancisco/review533579.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/input/reviews/SanFrancisco/review5338.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/input/reviews/SanFrancisco/review5361249.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/input/reviews/SanFrancisco/review5425.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/input/reviews/SanFrancisco/review564858.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/input/reviews/SanFrancisco/review57255.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/input/reviews/SanFrancisco/review578899.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/input/reviews/SanFrancisco/review5830.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/input/reviews/SanFrancisco/review5875.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/input/reviews/SanFrancisco/review5901.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/input/reviews/SanFrancisco/review5984.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/input/reviews/SanFrancisco/review6271901.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/input/reviews/SanFrancisco/review6505.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/input/reviews/SanFrancisco/review662368.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/input/reviews/SanFrancisco/review6666.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/input/reviews/SanFrancisco/review6706717.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/input/reviews/SanFrancisco/review693658.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/input/reviews/SanFrancisco/review7262522.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/input/reviews/SanFrancisco/review7635.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/input/reviews/SanFrancisco/review7713.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/input/reviews/SanFrancisco/review789395.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/input/reviews/SanFrancisco/review790530.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/input/reviews/SanFrancisco/review790579.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/input/reviews/SanFrancisco/review791769.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/input/reviews/SanFrancisco/review7942.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/input/reviews/SanFrancisco/review808403.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/input/reviews/SanFrancisco/review8090040.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/input/reviews/SanFrancisco/review855749.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/input/reviews/SanFrancisco/review856888.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/input/reviews/SanFrancisco/review8638.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/input/reviews/SanFrancisco/review8647196.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/input/reviews/SanFrancisco/review876315.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/input/reviews/SanFrancisco/review881699.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/input/reviews/SanFrancisco/review883306.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/input/reviews/SanFrancisco/review890830.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/input/reviews/SanFrancisco/review891239.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/input/reviews/SanFrancisco/review894295.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/input/reviews/SanFrancisco/review897225.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/input/reviews/SanFrancisco/review897333.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/input/reviews/SanFrancisco/review9043627.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/input/reviews/SanFrancisco/review904482.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/input/reviews/SanFrancisco/review910225.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/input/reviews/SanFrancisco/review912982.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/input/reviews/SanFrancisco/review915510.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/input/reviews/SanFrancisco/review918527.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/input/reviews/SanFrancisco/review919198.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/hotelapp/utils/UserManager.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/input/hotels/hotels.json" beforeDir="false" afterPath="$PROJECT_DIR$/input/hotels/hotels200.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/hotelapp/ClearCookieServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/hotelapp/LogoutServlet.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/hotelapp/DatabaseHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/hotelapp/DatabaseHandler.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/hotelapp/HomeServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/hotelapp/HomeServlet.java" afterDir="false" />
+    <list default="true" id="1306db4f-b61b-4225-94e6-3327eef60eb1" name="Changes" comment="xml files">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/hotelapp/HotelData.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/hotelapp/HotelData.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/hotelapp/HotelParser.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/hotelapp/HotelParser.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/hotelapp/HotelServer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/hotelapp/HotelServer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/hotelapp/HotelServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/hotelapp/HotelServlet.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/hotelapp/LoginServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/hotelapp/LoginServlet.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/hotelapp/PreparedStatements.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/hotelapp/PreparedStatements.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/hotelapp/RegistrationServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/hotelapp/RegistrationServlet.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/hotelapp/Review.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/hotelapp/Review.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/hotelapp/ReviewMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/hotelapp/ReviewMapper.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/hotelapp/ReviewParser.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/hotelapp/ReviewParser.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/hotelapp/SearchServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/hotelapp/SearchServlet.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/hotelapp/ThreadSafeHotelData.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/hotelapp/ThreadSafeHotelData.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/hotelapp/ThreadSafeReviewMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/hotelapp/ThreadSafeReviewMapper.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/getHotels.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/getHotels.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/home.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/home.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/login.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/login.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/register.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/register.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/search.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/search.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/hotel.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/hotel.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -218,15 +43,15 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "DefaultHtmlFileTemplate": "HTML File",
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "last_opened_file_path": "/Users/nataliya/IdeaProjects/final-project-nataliya-a/input",
-    "settings.editor.selected.configurable": "editor.preferences.fonts.default"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;DefaultHtmlFileTemplate&quot;: &quot;HTML File&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;/Users/nataliya/IdeaProjects/final-project-nataliya-a/input&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;editor.preferences.fonts.default&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/input" />
@@ -358,7 +183,133 @@
       <option name="project" value="LOCAL" />
       <updated>1669072396691</updated>
     </task>
-    <option name="localTasksCounter" value="12" />
+    <task id="LOCAL-00012" summary="search.html with javascript">
+      <created>1669245746390</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1669245746390</updated>
+    </task>
+    <task id="LOCAL-00013" summary="reviews json imported from previous projects">
+      <created>1669245837837</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1669245837837</updated>
+    </task>
+    <task id="LOCAL-00014" summary="hotels json imported from previous projects">
+      <created>1669245871709</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1669245871709</updated>
+    </task>
+    <task id="LOCAL-00015" summary="UserManager.java class created to get the username cookies">
+      <created>1669245959400</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1669245959400</updated>
+    </task>
+    <task id="LOCAL-00016" summary="LogoutServlet.java created">
+      <created>1669246043663</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1669246043663</updated>
+    </task>
+    <task id="LOCAL-00017" summary="DatabaseHandler.java created">
+      <created>1669246080350</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1669246080350</updated>
+    </task>
+    <task id="LOCAL-00018" summary="Classes from previous projects modified to accommodate this project">
+      <created>1669246159564</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1669246159564</updated>
+    </task>
+    <task id="LOCAL-00019" summary="HotelServlet.java and getHotels.html created">
+      <created>1669246272999</created>
+      <option name="number" value="00019" />
+      <option name="presentableId" value="LOCAL-00019" />
+      <option name="project" value="LOCAL" />
+      <updated>1669246272999</updated>
+    </task>
+    <task id="LOCAL-00020" summary="LoginServlet.java and login.html created">
+      <created>1669246295247</created>
+      <option name="number" value="00020" />
+      <option name="presentableId" value="LOCAL-00020" />
+      <option name="project" value="LOCAL" />
+      <updated>1669246295247</updated>
+    </task>
+    <task id="LOCAL-00021" summary="RegistrationServlet.java and register.html created">
+      <created>1669246321124</created>
+      <option name="number" value="00021" />
+      <option name="presentableId" value="LOCAL-00021" />
+      <option name="project" value="LOCAL" />
+      <updated>1669246321124</updated>
+    </task>
+    <task id="LOCAL-00022" summary="SearchServlet.java created">
+      <created>1669246369363</created>
+      <option name="number" value="00022" />
+      <option name="presentableId" value="LOCAL-00022" />
+      <option name="project" value="LOCAL" />
+      <updated>1669246369363</updated>
+    </task>
+    <task id="LOCAL-00023" summary="PreparedStatements.java created">
+      <created>1669246417785</created>
+      <option name="number" value="00023" />
+      <option name="presentableId" value="LOCAL-00023" />
+      <option name="project" value="LOCAL" />
+      <updated>1669246417785</updated>
+    </task>
+    <task id="LOCAL-00024" summary="HomeServlet.java and home.html created">
+      <created>1669246449120</created>
+      <option name="number" value="00024" />
+      <option name="presentableId" value="LOCAL-00024" />
+      <option name="project" value="LOCAL" />
+      <updated>1669246449120</updated>
+    </task>
+    <task id="LOCAL-00025" summary="HotelServer.java class created">
+      <created>1669246470272</created>
+      <option name="number" value="00025" />
+      <option name="presentableId" value="LOCAL-00025" />
+      <option name="project" value="LOCAL" />
+      <updated>1669246470272</updated>
+    </task>
+    <task id="LOCAL-00026" summary="ParseArgs class created to parse the CLI args">
+      <created>1669246524747</created>
+      <option name="number" value="00026" />
+      <option name="presentableId" value="LOCAL-00026" />
+      <option name="project" value="LOCAL" />
+      <updated>1669246524747</updated>
+    </task>
+    <task id="LOCAL-00027" summary="EditReviewServlet.java and editReview.html created">
+      <created>1669246577094</created>
+      <option name="number" value="00027" />
+      <option name="presentableId" value="LOCAL-00027" />
+      <option name="project" value="LOCAL" />
+      <updated>1669246577094</updated>
+    </task>
+    <task id="LOCAL-00028" summary="hotel.html created">
+      <created>1669246629110</created>
+      <option name="number" value="00028" />
+      <option name="presentableId" value="LOCAL-00028" />
+      <option name="project" value="LOCAL" />
+      <updated>1669246629110</updated>
+    </task>
+    <task id="LOCAL-00029" summary="xml files">
+      <created>1669246654202</created>
+      <option name="number" value="00029" />
+      <option name="presentableId" value="LOCAL-00029" />
+      <option name="project" value="LOCAL" />
+      <updated>1669246654202</updated>
+    </task>
+    <option name="localTasksCounter" value="30" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -373,11 +324,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="HotelServer.java updated with mappings" />
-    <MESSAGE value="HTML pages created along with database.properties" />
-    <MESSAGE value="DatabaseHandler created" />
-    <MESSAGE value="Class DatabaseHandler created" />
-    <MESSAGE value="Classes Hotel, HotelData and HotelParser imported from previous projects" />
     <MESSAGE value="LoginServlet.java created" />
     <MESSAGE value="RegistrationServlet.java created" />
     <MESSAGE value="ClearCookieServlet and HomeServlet created" />
@@ -385,7 +331,25 @@
     <MESSAGE value="Classes HotelServlet, PreparedStatements and SearchServlet created" />
     <MESSAGE value="hotels.json added to project" />
     <MESSAGE value="imported Review classes from previous projects" />
-    <option name="LAST_COMMIT_MESSAGE" value="imported Review classes from previous projects" />
+    <MESSAGE value="search.html with javascript" />
+    <MESSAGE value="reviews json imported from previous projects" />
+    <MESSAGE value="hotels json imported from previous projects" />
+    <MESSAGE value="UserManager.java class created to get the username cookies" />
+    <MESSAGE value="LogoutServlet.java created" />
+    <MESSAGE value="DatabaseHandler.java created" />
+    <MESSAGE value="Classes from previous projects modified to accommodate this project" />
+    <MESSAGE value="HotelServlet.java and getHotels.html created" />
+    <MESSAGE value="LoginServlet.java and login.html created" />
+    <MESSAGE value="RegistrationServlet.java and register.html created" />
+    <MESSAGE value="SearchServlet.java created" />
+    <MESSAGE value="PreparedStatements.java created" />
+    <MESSAGE value="HomeServlet.java and home.html created" />
+    <MESSAGE value="HotelServer.java class created" />
+    <MESSAGE value="ParseArgs class created to parse the CLI args" />
+    <MESSAGE value="EditReviewServlet.java and editReview.html created" />
+    <MESSAGE value="hotel.html created" />
+    <MESSAGE value="xml files" />
+    <option name="LAST_COMMIT_MESSAGE" value="xml files" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

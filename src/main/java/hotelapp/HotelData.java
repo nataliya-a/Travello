@@ -54,8 +54,8 @@ public class HotelData {
 
     public List<Hotel> getHotels() {
         List<Hotel> hotelNames = new ArrayList<>();
-        for (String key : hotelsMap.keySet()) {
-            Hotel hotel = hotelsMap.get(key);
+        for (String key : hotelsMapNew.keySet()) {
+            Hotel hotel = hotelsMapNew.get(key);
             hotelNames.add(hotel);
 
         }

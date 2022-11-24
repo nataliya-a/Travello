@@ -65,6 +65,8 @@ public class SearchServlet extends HttpServlet {
 
         search = StringEscapeUtils.escapeHtml4(search);
 
+
+
         List<Hotel> hotels = getHotels(search,request);
         List<String> hotelNames = new ArrayList<>();
         for (Hotel hotel : hotels) {
@@ -91,6 +93,7 @@ public class SearchServlet extends HttpServlet {
         ThreadSafeHotelData hotelData = (ThreadSafeHotelData) request.getServletContext().getAttribute("hotelData");
 
         List<Hotel> lhotel= hotelData.getHotels();
+        System.out.println("lhotel size:"+lhotel.size());
 
         if (search == null || search.isEmpty()) {
             return lhotel;
