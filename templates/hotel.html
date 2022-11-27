@@ -1,9 +1,6 @@
 <head>
   <title>Hotel Details</title>
   <meta charset="utf-8">
-<!--  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">-->
-<!--  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>-->
-<!--  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>-->
 </head>
 <body>
 
@@ -35,14 +32,15 @@
     <input type="submit" value="Submit">
   </form>
   <hr>
-  <h2><p><b>Reviews :</b></p></h2>
+  <h2><p align="justify"><b>Reviews :</b></p></h2>
   #foreach($review in $reviews)
-  <h4>$review.getTitle()</h4>
-  <p><b>Review </b> by <b style="color: #018AE6;">$review.getUserNickname()</b> on <b>$review.getReviewSubmissionTime()</b></p>
+  <h4 align="justify">$review.getTitle()</h4>
+  <p align="justify"><b>Review </b> by <b style="color: #018AE6;">$review.getUserNickname()</b> on <b>$review.getReviewSubmissionTime()</b></p>
 
-  <p>$review.getReviewText()</p>
+  <p align="justify">$review.getReviewText()</p>
   #if($review.getUserNickname() == $username)
   <!--  show a button for edit and a button for delete-->
+  <p align="justify">
   <form action="edit" method="get">
     <input type="hidden" name="hotelId" value="$hotel.getHotelID()">
     <input type="hidden" name="username" value="$username">
@@ -52,6 +50,7 @@
     <input type="submit" name="edit" value="Edit">
     <input type="submit" name="delete" value="Delete">
   </form>
+  </p>
 
   #end
   <br>

@@ -4,13 +4,17 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="1306db4f-b61b-4225-94e6-3327eef60eb1" name="Changes" comment="xml files">
+    <list default="true" id="1306db4f-b61b-4225-94e6-3327eef60eb1" name="Changes" comment="refactored HTML pages">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/hotelapp/Hotel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/hotelapp/Hotel.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/hotelapp/HotelData.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/hotelapp/HotelData.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/hotelapp/SearchServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/hotelapp/SearchServlet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/hotelapp/Review.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/hotelapp/Review.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/hotelapp/ReviewMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/hotelapp/ReviewMapper.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/hotelapp/ThreadSafeHotelData.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/hotelapp/ThreadSafeHotelData.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/hotelapp/ThreadSafeReviewMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/hotelapp/ThreadSafeReviewMapper.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/getHotels.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/getHotels.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/hotel.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/hotel.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/register.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/register.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -20,8 +24,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Class" />
         <option value="HTML File" />
+        <option value="Class" />
       </list>
     </option>
   </component>
@@ -86,13 +90,28 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="MySet" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="hotelapp.MySet" />
+      <module name="cs601F22FinalProject" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="hotelapp.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <list>
+      <item itemvalue="Application.MySet" />
       <item itemvalue="Application.DatabaseHandler" />
       <item itemvalue="Application.HotelServer" />
     </list>
     <recent_temporary>
       <list>
         <item itemvalue="Application.HotelServer" />
+        <item itemvalue="Application.MySet" />
         <item itemvalue="Application.DatabaseHandler" />
       </list>
     </recent_temporary>
@@ -309,7 +328,14 @@
       <option name="project" value="LOCAL" />
       <updated>1669246654202</updated>
     </task>
-    <option name="localTasksCounter" value="30" />
+    <task id="LOCAL-00030" summary="refactored HTML pages">
+      <created>1669254919635</created>
+      <option name="number" value="00030" />
+      <option name="presentableId" value="LOCAL-00030" />
+      <option name="project" value="LOCAL" />
+      <updated>1669254919635</updated>
+    </task>
+    <option name="localTasksCounter" value="31" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -324,7 +350,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="LoginServlet.java created" />
     <MESSAGE value="RegistrationServlet.java created" />
     <MESSAGE value="ClearCookieServlet and HomeServlet created" />
     <MESSAGE value="ThreadSafeHotelData imported from previous projects" />
@@ -349,7 +374,8 @@
     <MESSAGE value="EditReviewServlet.java and editReview.html created" />
     <MESSAGE value="hotel.html created" />
     <MESSAGE value="xml files" />
-    <option name="LAST_COMMIT_MESSAGE" value="xml files" />
+    <MESSAGE value="refactored HTML pages" />
+    <option name="LAST_COMMIT_MESSAGE" value="refactored HTML pages" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

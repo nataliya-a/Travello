@@ -52,7 +52,6 @@ public class Review {
     @Override
     public String toString() {
         String str = "";
-//        str += "--------------------" + System.lineSeparator();
         str += "Review by " + userNickname + " on " + reviewSubmissionTime;
         str += System.lineSeparator() + "Rating: " + ratingOverall;
         str += System.lineSeparator() + "ReviewId: " + reviewID;

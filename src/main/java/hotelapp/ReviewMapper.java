@@ -5,6 +5,10 @@ import java.util.List;
 import java.util.TreeMap;
 import java.util.TreeSet;
 
+/**
+ * This class that gets, adds, deletes, and updates reviews in reviewsMap.
+ *
+ */
 public class ReviewMapper {
     private final HashMap<String, TreeSet<Review>> reviewsMap = new HashMap<>();
 
@@ -28,30 +32,32 @@ public class ReviewMapper {
             }
         }
     }
+
+
     /** given a hotelId, return the review */
     public TreeSet<Review> printReviews(String hotelID) {
         return reviewsMap.get(hotelID);
     }
 
-    /** given a hotelId, return a boolean */
 
+    /** given a hotelId, returns true if the hotel has reviews */
     public boolean containsHotel(String hotelId) {
         return reviewsMap.containsKey(hotelId);
     }
 
-    /** given a hotelId, return the set of reviews */
 
+    /** given a hotelId, return the set of reviews */
     public TreeSet<Review> getReviewObject(String hotelId) {
         return reviewsMap.get(hotelId);
     }
 
 
-
+    /** delete a review from the map if the reviewID matches */
     public void deleteReview(String hotelId, String reviewId) {
         reviewsMap.get(hotelId).removeIf(r -> r.getReviewID().equals(reviewId));
     }
 
-
+    /** given a hotelID and a review object adds the review to the map */
     public void addNewReview(String hotelID, Review review) {
         reviewsMap.get(hotelID).add(review);
     }

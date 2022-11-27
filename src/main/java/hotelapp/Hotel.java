@@ -26,21 +26,23 @@ public class Hotel {
     private String lon;
 
 
-
     /**
      * Constructor for Hotel.
      * @param hotelName name of the hotel
      * @param address address of the hotel
      * @param hotelID id of the hotel
      * @param city city of the hotel
+     * @param state state of the hotel
+     * @param lat latitude of the hotel
+     * @param lon longitude of the hotel
      */
+
     public Hotel(String hotelName, String hotelID, String address, String city, String state, String lat, String lon) {
         this.hotelName = hotelName;
         this.hotelID = hotelID;
         this.address = address;
         this.city = city;
         this.state = state;
-        //this.latLong = latLong;
         this.lat = lat;
         this.lon = lon;
     }
@@ -77,16 +79,6 @@ public class Hotel {
     public String getHotelID() {
         return hotelID;
     }
-
-    /**
-     * Get the hotel ID.
-     * @return hotel ID
-     */
-
-    public Integer getIntHotelID() {
-        return Integer.parseInt(hotelID);
-    }
-
 
     /** Get the city of the hotel. */
     public String getCity() {

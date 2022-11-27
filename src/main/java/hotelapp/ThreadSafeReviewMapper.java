@@ -33,6 +33,8 @@ public class ThreadSafeReviewMapper extends ReviewMapper {
             lock.writeLock().unlock();
         }
     }
+
+
     /** given a hotelId, return the review */
     public TreeSet<Review> printReviews(String hotelID) {
         lock.readLock().lock();
@@ -42,6 +44,7 @@ public class ThreadSafeReviewMapper extends ReviewMapper {
             lock.readLock().unlock();
         }
     }
+
 
     /** given a hotelId, return a boolean */
     public boolean containsHotel(String hotelId) {
@@ -53,8 +56,8 @@ public class ThreadSafeReviewMapper extends ReviewMapper {
         }
     }
 
-    /** given a hotelId, return the review object */
 
+    /** given a hotelId, return the review object */
     public TreeSet<Review> getReviewObject(String hotelId) {
         lock.readLock().lock();
         try {
@@ -65,6 +68,7 @@ public class ThreadSafeReviewMapper extends ReviewMapper {
     }
 
 
+    /** given a hotelID and a review object adds the review to the map */
     public void addNewReview(String hotelId, Review review) {
         lock.writeLock().lock();
         try {
