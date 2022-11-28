@@ -4,17 +4,19 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="1306db4f-b61b-4225-94e6-3327eef60eb1" name="Changes" comment="refactored HTML pages">
+    <list default="true" id="1306db4f-b61b-4225-94e6-3327eef60eb1" name="Changes" comment="addressed code review comments">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/hotelapp/Hotel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/hotelapp/Hotel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/hotelapp/EditReviewServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/servlets/EditReviewServlet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/hotelapp/HomeServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/servlets/HomeServlet.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/hotelapp/HotelData.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/hotelapp/HotelData.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/hotelapp/Review.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/hotelapp/Review.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/hotelapp/ReviewMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/hotelapp/ReviewMapper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/hotelapp/HotelServer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/hotelapp/HotelServer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/hotelapp/HotelServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/servlets/HotelServlet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/hotelapp/LoginServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/servlets/LoginServlet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/hotelapp/LogoutServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/servlets/LogoutServlet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/hotelapp/RegistrationServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/servlets/RegistrationServlet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/hotelapp/SearchServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/servlets/SearchServlet.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/hotelapp/ThreadSafeHotelData.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/hotelapp/ThreadSafeHotelData.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/hotelapp/ThreadSafeReviewMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/hotelapp/ThreadSafeReviewMapper.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/getHotels.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/getHotels.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/hotel.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/hotel.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/register.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/register.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/login.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/login.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -47,15 +49,16 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;DefaultHtmlFileTemplate&quot;: &quot;HTML File&quot;,
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;/Users/nataliya/IdeaProjects/final-project-nataliya-a/input&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;editor.preferences.fonts.default&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "DefaultHtmlFileTemplate": "HTML File",
+    "OverrideImplement.generate.javadoc": "true",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "last_opened_file_path": "/Users/nataliya/IdeaProjects/final-project-nataliya-a/input",
+    "settings.editor.selected.configurable": "editor.preferences.fonts.default"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/input" />
@@ -95,7 +98,7 @@
       <module name="cs601F22FinalProject" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="hotelapp.*" />
+          <option name="PATTERN" value="servlets.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -335,7 +338,14 @@
       <option name="project" value="LOCAL" />
       <updated>1669254919635</updated>
     </task>
-    <option name="localTasksCounter" value="31" />
+    <task id="LOCAL-00031" summary="addressed code review comments">
+      <created>1669580277846</created>
+      <option name="number" value="00031" />
+      <option name="presentableId" value="LOCAL-00031" />
+      <option name="project" value="LOCAL" />
+      <updated>1669580277846</updated>
+    </task>
+    <option name="localTasksCounter" value="32" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -350,7 +360,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="RegistrationServlet.java created" />
     <MESSAGE value="ClearCookieServlet and HomeServlet created" />
     <MESSAGE value="ThreadSafeHotelData imported from previous projects" />
     <MESSAGE value="Classes HotelServlet, PreparedStatements and SearchServlet created" />
@@ -375,7 +384,8 @@
     <MESSAGE value="hotel.html created" />
     <MESSAGE value="xml files" />
     <MESSAGE value="refactored HTML pages" />
-    <option name="LAST_COMMIT_MESSAGE" value="refactored HTML pages" />
+    <MESSAGE value="addressed code review comments" />
+    <option name="LAST_COMMIT_MESSAGE" value="addressed code review comments" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

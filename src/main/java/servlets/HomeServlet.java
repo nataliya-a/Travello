@@ -1,4 +1,4 @@
-package hotelapp;
+package servlets;
 
 import org.apache.velocity.Template;
 import org.apache.velocity.VelocityContext;

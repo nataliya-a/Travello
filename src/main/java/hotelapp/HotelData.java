@@ -1,12 +1,50 @@
 package hotelapp;
 
-import java.util.ArrayList;
-import java.util.List;
-import java.util.TreeMap;
+import java.time.Instant;
+import java.time.LocalDate;
+import java.util.*;
 
 public class HotelData {
 
     private final TreeMap<String, Hotel> hotelsMap = new TreeMap<>();
+
+    private final Map<String, Map<LocalDate, Set<String>>> bookedDates = new HashMap<>();
+
+
+    /**
+     * Check if can book a room for a given hotelId.
+     * @param hotelId hotel id
+     * @param checkIn check in date
+     * @param checkOut check out date
+     * @return true if the room is available, false otherwise
+     */
+    public boolean canBook(String hotelId, LocalDate checkIn, LocalDate checkOut) {
+        if (!hotelsMap.containsKey(hotelId)) {
+            return false;
+        }
+        Map<LocalDate, Set<String>> hotelBookedDates = bookedDates.get(hotelId);
+        for (LocalDate date = checkIn; date.isBefore(checkOut.plusDays(1)); date = date.plusDays(1)) {
+            if (hotelBookedDates.containsKey(date)) {
+                if (hotelBookedDates.get(date).size() >= 3) {
+                    return false;
+                }
+            }
+        }
+        return true;
+    }
+
+    public void book(String hotelId, LocalDate checkIn, LocalDate checkOut, String userId) {
+        if (!hotelsMap.containsKey(hotelId)) {
+            return;
+        }
+        Map<LocalDate, Set<String>> hotelBookedDates = bookedDates.get(hotelId);
+        for (LocalDate date = checkIn; date.isBefore(checkOut.plusDays(1)); date = date.plusDays(1)) {
+            if (!hotelBookedDates.containsKey(date)) {
+                hotelBookedDates.put(date, new HashSet<>());
+            }
+            hotelBookedDates.get(date).add(userId);
+        }
+    }
 
 
     /** given a list of hotels, add them to the map */
@@ -43,6 +81,26 @@ public class HotelData {
     public String getHotelDataNew(String strHotelId) {
         return hotelsMap.get(strHotelId).toString();
     }
+
+    /** given a hotelId, return the all booked dates */
+    public ArrayList<LocalDate> getAllBookedDates(String hotelId) {
+        Map<LocalDate, Set<String>> hotelBookedDates = bookedDates.get(hotelId);
+        return new ArrayList<>(hotelBookedDates.keySet());
+    }
+
+    /**  given a hotelId and userId, return the all booked dates */
+    public ArrayList<LocalDate> getUserBookedDates(String hotelId, String userId) {
+        Map<LocalDate, Set<String>> hotelBookedDates = bookedDates.get(hotelId);
+        ArrayList<LocalDate> bookedDates = new ArrayList<>();
+        for (LocalDate date : hotelBookedDates.keySet()) {
+            if (hotelBookedDates.get(date).contains(userId)) {
+                bookedDates.add(date);
+            }
+        }
+        return bookedDates;
+    }
+
+
 
 
 }

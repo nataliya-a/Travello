@@ -1,4 +1,4 @@
-package hotelapp;
+package servlets;
 import hotelapp.DatabaseHandler;
 import org.apache.commons.text.StringEscapeUtils;
 import org.apache.velocity.Template;
@@ -9,9 +9,6 @@ import javax.servlet.http.*;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.io.StringWriter;
-import java.util.Map;
-
-
 
 
 /** A servlet that handles login requests.
@@ -30,7 +27,7 @@ public class LoginServlet extends HttpServlet {
 
         Cookie[] cookies = request.getCookies();
 
-        if (cookies != null ) {
+        if (cookies != null) {
             for (Cookie cookie : cookies) {
                 if (cookie.getName().equals("username")) {
                     response.sendRedirect("/search");

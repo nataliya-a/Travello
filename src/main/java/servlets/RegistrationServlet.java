@@ -1,5 +1,6 @@
-package hotelapp;
+package servlets;
 
+import hotelapp.DatabaseHandler;
 import hotelapp.utils.UserManager;
 import org.apache.commons.text.StringEscapeUtils;
 import org.apache.velocity.Template;
@@ -13,7 +14,6 @@ import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.io.StringWriter;
-import java.util.regex.Pattern;
 
 
 /** An example that demonstrates how to process HTML forms with servlets.

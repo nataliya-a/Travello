@@ -1,5 +1,7 @@
-package hotelapp;
+package servlets;
 
+import hotelapp.Hotel;
+import hotelapp.ThreadSafeHotelData;
 import hotelapp.utils.UserManager;
 import org.apache.commons.text.StringEscapeUtils;
 import org.apache.velocity.Template;

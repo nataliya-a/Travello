@@ -1,12 +1,15 @@
-package hotelapp;
+package servlets;
 
+import hotelapp.Hotel;
+import hotelapp.Review;
+import hotelapp.ThreadSafeHotelData;
+import hotelapp.ThreadSafeReviewMapper;
 import hotelapp.utils.UserManager;
 import org.apache.velocity.Template;
 import org.apache.velocity.VelocityContext;
 import org.apache.velocity.app.VelocityEngine;
 
 import javax.servlet.ServletException;
-import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
