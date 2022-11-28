@@ -20,6 +20,31 @@
   <p><b>Average Ratings :</b> $rating</p>
   <p><b>Expedia :</b> <a href=$expediaLink> Click Here </a> </p>
 
+  <div class="container" style="text-align:center">
+    <h2>Book a hotel</h2>
+    <form action="booking" method="post" onsubmit="return validateForm()">
+<!--      hidden field for hotelId-->
+        <input type="hidden" name="hotelId" value="$hotel.getHotelID()">
+      <div class="form-group">
+        <label for="checkIn">Check In:</label>
+        <input type="date" class="form-control" id="checkIn" placeholder="Enter check in date" name="checkIn" required>
+      </div>
+      <div class="form-group">
+        <label for="checkOut">Check Out:</label>
+        <input type="date" class="form-control" id="checkOut" placeholder="Enter check out date" name="checkOut" required>
+      </div>
+      <button type="submit" class="btn btn-default">Submit</button>
+    </form>
+  </div>
+  <p id="error" style="color: red"></p>
+
+  #if($myBookedDates && $myBookedDates.size() > 0)
+  <h2>My booked dates</h2>
+    #foreach($bookedDate in $myBookedDates)
+    <p>$bookedDate</p>
+    #end
+    #end
+
   <hr>
   <hr>
   <h3>Add Review:</h3>
@@ -61,6 +86,34 @@
 
 
 </center>
+
+<script>
+    function validateForm() {
+        var checkIn = document.getElementById("checkIn").value;
+        var checkOut = document.getElementById("checkOut").value;
+        if (checkIn > checkOut) {
+            document.getElementById("error").innerHTML = "Check out date must be after check in date";
+            return false;
+        }
+        var today = new Date();
+        var dd = today.getDate();
+        var mm = today.getMonth()+1; //January is 0!
+        var yyyy = today.getFullYear();
+        if(dd<10) {
+            dd = '0'+dd
+        }
+        if(mm<10) {
+            mm = '0'+mm
+        }
+        today = yyyy + '-' + mm + '-' + dd;
+        if (checkIn < today) {
+            document.getElementById("error").innerHTML = "Check in date must be after today";
+            return false;
+        }
+        return true;
+    }
+</script>
+
 </body>
 
 </body>

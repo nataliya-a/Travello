@@ -49,7 +49,7 @@ public class HotelServlet extends HttpServlet {
 
             ThreadSafeHotelData hotelData = (ThreadSafeHotelData) request.getServletContext().getAttribute("hotelData");
             Hotel hotel = hotelData.getHotelObjectNew(hotelId);
-
+            ArrayList<LocalDate> myBookedDates = hotelData.getUserBookedDates(hotelId, username);
 
             ThreadSafeReviewMapper reviewMapper = (ThreadSafeReviewMapper) request.getServletContext().getAttribute("reviewMapper");
             TreeSet<Review> reviews = reviewMapper.getReviewObject(hotelId);
@@ -80,6 +80,7 @@ public class HotelServlet extends HttpServlet {
             context.put("rating", rating);
             context.put("expediaLink", expediaLink);
             context.put("username", username);
+            context.put("myBookedDates", myBookedDates);
             StringWriter writer = new StringWriter();
             template.merge(context, writer);
             out.println(writer);

@@ -23,6 +23,7 @@ public class HotelServer {
 		handler.addServlet(LogoutServlet.class, "/logout");
 		handler.addServlet(SearchServlet.class, "/search");
 		handler.addServlet(EditReviewServlet.class, "/edit");
+		handler.addServlet(BookingServlet.class, "/booking");
 
 
 
