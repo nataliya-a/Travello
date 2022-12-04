@@ -1,9 +1,6 @@
 package hotelapp;
 
-import java.util.HashMap;
-import java.util.List;
-import java.util.TreeMap;
-import java.util.TreeSet;
+import java.util.*;
 
 /**
  * This class that gets, adds, deletes, and updates reviews in reviewsMap.
@@ -30,6 +27,24 @@ public class ReviewMapper {
                         ))
                         .add(r);
             }
+        }
+    }
+
+    public void addReviewsToDB(List<Review> reviews) {
+        DatabaseHandler db = DatabaseHandler.getInstance();
+        for (Review r : reviews) {
+            String reviewText = r.getReviewText();
+            reviewText.replaceAll("\\p{Punct}", "");
+            String hotelID = r.getHotelID();
+            String reviewID = r.getReviewID();
+            String reviewTitle = r.getTitle();
+            String reviewSubmissionTime = String.valueOf(r.getReviewSubmissionTime());
+            String username = r.getUserNickname();
+            String rating = String.valueOf(r.getRatingOverall());
+            if (reviewID.equals("")) {
+                reviewID = UUID.randomUUID().toString();
+            }
+            db.insertReview(hotelID, reviewID, reviewTitle, reviewText, username, rating, reviewSubmissionTime);
         }
     }
 

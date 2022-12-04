@@ -65,6 +65,15 @@ public class ThreadSafeHotelData extends HotelData {
         }
     }
 
+    public void addHotelToDB(List<Hotel> hotels) {
+        lock.writeLock().lock();
+        try {
+            super.addHotelToDB(hotels);
+        } finally {
+            lock.writeLock().unlock();
+        }
+    }
+
     /**
      * @param hotelId  hotel id
      * @param checkIn  check in date

@@ -35,6 +35,16 @@ public class ThreadSafeReviewMapper extends ReviewMapper {
     }
 
 
+
+
+
+
+
+
+
+
+
+
     /** given a hotelId, return the review */
     public TreeSet<Review> printReviews(String hotelID) {
         lock.readLock().lock();

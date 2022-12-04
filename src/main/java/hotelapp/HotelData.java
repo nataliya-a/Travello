@@ -69,6 +69,21 @@ public class HotelData {
         }
     }
 
+    public void addHotelToDB(List<Hotel> hotels) {
+        DatabaseHandler db = DatabaseHandler.getInstance();
+        for (Hotel hotel : hotels) {
+            String hotelId = hotel.getHotelID();
+            String hotelName = hotel.getHotelName();
+            String address = hotel.getAddress();
+            String city = hotel.getCity();
+            String state = hotel.getState();
+            String lat = hotel.getLat();
+            String lon = hotel.getLon();
+            db.insertHotel(hotelId, hotelName, address, city, state, lat, lon);
+        }
+    }
+
+
     /** given a hotelId, returns the hotel object*/
 
     public Hotel getHotelObjectNew(String strHotelId) {
