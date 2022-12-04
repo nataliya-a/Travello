@@ -4,22 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="1306db4f-b61b-4225-94e6-3327eef60eb1" name="Changes" comment="changes to hotel.html for better looks">
-      <change afterPath="$PROJECT_DIR$/src/main/java/servlets/AddFavServlet.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/servlets/MyProfileServlet.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/myprofile.html" afterDir="false" />
+    <list default="true" id="1306db4f-b61b-4225-94e6-3327eef60eb1" name="Changes" comment="build frontend for login and register">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/hotelapp/DatabaseHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/hotelapp/DatabaseHandler.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/hotelapp/HotelData.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/hotelapp/HotelData.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/hotelapp/HotelServer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/hotelapp/HotelServer.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/hotelapp/ParseArgs.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/hotelapp/ParseArgs.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/hotelapp/PreparedStatements.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/hotelapp/PreparedStatements.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/hotelapp/ReviewMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/hotelapp/ReviewMapper.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/hotelapp/ThreadSafeHotelData.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/hotelapp/ThreadSafeHotelData.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/hotelapp/ThreadSafeReviewMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/hotelapp/ThreadSafeReviewMapper.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/servlets/EditReviewServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/servlets/EditReviewServlet.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/servlets/HotelServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/servlets/HotelServlet.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/servlets/SearchServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/servlets/SearchServlet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/editReview.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/editReview.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/getHotels.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/getHotels.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/hotel.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/hotel.html" afterDir="false" />
     </list>
@@ -31,8 +20,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="HTML File" />
         <option value="Class" />
+        <option value="HTML File" />
       </list>
     </option>
   </component>
@@ -371,7 +360,84 @@
       <option name="project" value="LOCAL" />
       <updated>1669681102916</updated>
     </task>
-    <option name="localTasksCounter" value="35" />
+    <task id="LOCAL-00035" summary="auto generated config file">
+      <created>1670112795831</created>
+      <option name="number" value="00035" />
+      <option name="presentableId" value="LOCAL-00035" />
+      <option name="project" value="LOCAL" />
+      <updated>1670112795831</updated>
+    </task>
+    <task id="LOCAL-00036" summary="Refactor existing data structures to migrate to SQL">
+      <created>1670112829233</created>
+      <option name="number" value="00036" />
+      <option name="presentableId" value="LOCAL-00036" />
+      <option name="project" value="LOCAL" />
+      <updated>1670112829233</updated>
+    </task>
+    <task id="LOCAL-00037" summary="Build database handlers needed for the project">
+      <created>1670112856082</created>
+      <option name="number" value="00037" />
+      <option name="presentableId" value="LOCAL-00037" />
+      <option name="project" value="LOCAL" />
+      <updated>1670112856082</updated>
+    </task>
+    <task id="LOCAL-00038" summary="add my-profile page and UI">
+      <created>1670130439483</created>
+      <option name="number" value="00038" />
+      <option name="presentableId" value="LOCAL-00038" />
+      <option name="project" value="LOCAL" />
+      <updated>1670130439483</updated>
+    </task>
+    <task id="LOCAL-00039" summary="add logic to check and display last login time">
+      <created>1670130466646</created>
+      <option name="number" value="00039" />
+      <option name="presentableId" value="LOCAL-00039" />
+      <option name="project" value="LOCAL" />
+      <updated>1670130466647</updated>
+    </task>
+    <task id="LOCAL-00040" summary="styline changes to navbar">
+      <created>1670130482454</created>
+      <option name="number" value="00040" />
+      <option name="presentableId" value="LOCAL-00040" />
+      <option name="project" value="LOCAL" />
+      <updated>1670130482454</updated>
+    </task>
+    <task id="LOCAL-00041" summary="build frontend for hotel page">
+      <created>1670130530871</created>
+      <option name="number" value="00041" />
+      <option name="presentableId" value="LOCAL-00041" />
+      <option name="project" value="LOCAL" />
+      <updated>1670130530871</updated>
+    </task>
+    <task id="LOCAL-00042" summary="build frontend for home page">
+      <created>1670130549867</created>
+      <option name="number" value="00042" />
+      <option name="presentableId" value="LOCAL-00042" />
+      <option name="project" value="LOCAL" />
+      <updated>1670130549867</updated>
+    </task>
+    <task id="LOCAL-00043" summary="build frontend for search page">
+      <created>1670130558690</created>
+      <option name="number" value="00043" />
+      <option name="presentableId" value="LOCAL-00043" />
+      <option name="project" value="LOCAL" />
+      <updated>1670130558690</updated>
+    </task>
+    <task id="LOCAL-00044" summary="allow user to favorite a hotel">
+      <created>1670130587472</created>
+      <option name="number" value="00044" />
+      <option name="presentableId" value="LOCAL-00044" />
+      <option name="project" value="LOCAL" />
+      <updated>1670130587472</updated>
+    </task>
+    <task id="LOCAL-00045" summary="build frontend for login and register">
+      <created>1670130614592</created>
+      <option name="number" value="00045" />
+      <option name="presentableId" value="LOCAL-00045" />
+      <option name="project" value="LOCAL" />
+      <updated>1670130614592</updated>
+    </task>
+    <option name="localTasksCounter" value="46" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -386,17 +452,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="hotels.json added to project" />
-    <MESSAGE value="imported Review classes from previous projects" />
-    <MESSAGE value="search.html with javascript" />
-    <MESSAGE value="reviews json imported from previous projects" />
-    <MESSAGE value="hotels json imported from previous projects" />
-    <MESSAGE value="UserManager.java class created to get the username cookies" />
-    <MESSAGE value="LogoutServlet.java created" />
-    <MESSAGE value="DatabaseHandler.java created" />
-    <MESSAGE value="Classes from previous projects modified to accommodate this project" />
-    <MESSAGE value="HotelServlet.java and getHotels.html created" />
-    <MESSAGE value="LoginServlet.java and login.html created" />
     <MESSAGE value="RegistrationServlet.java and register.html created" />
     <MESSAGE value="SearchServlet.java created" />
     <MESSAGE value="PreparedStatements.java created" />
@@ -411,7 +466,18 @@
     <MESSAGE value="refactor code base for better readability" />
     <MESSAGE value="implement extra credit: booking rooms" />
     <MESSAGE value="changes to hotel.html for better looks" />
-    <option name="LAST_COMMIT_MESSAGE" value="changes to hotel.html for better looks" />
+    <MESSAGE value="auto generated config file" />
+    <MESSAGE value="Refactor existing data structures to migrate to SQL" />
+    <MESSAGE value="Build database handlers needed for the project" />
+    <MESSAGE value="add my-profile page and UI" />
+    <MESSAGE value="add logic to check and display last login time" />
+    <MESSAGE value="styline changes to navbar" />
+    <MESSAGE value="build frontend for hotel page" />
+    <MESSAGE value="build frontend for home page" />
+    <MESSAGE value="build frontend for search page" />
+    <MESSAGE value="allow user to favorite a hotel" />
+    <MESSAGE value="build frontend for login and register" />
+    <option name="LAST_COMMIT_MESSAGE" value="build frontend for login and register" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
