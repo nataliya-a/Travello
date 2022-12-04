@@ -24,6 +24,8 @@ public class HotelServer {
 		handler.addServlet(SearchServlet.class, "/search");
 		handler.addServlet(EditReviewServlet.class, "/edit");
 		handler.addServlet(BookingServlet.class, "/booking");
+		handler.addServlet(MyProfileServlet.class, "/myprofile");
+		handler.addServlet(AddFavServlet.class, "/addFav");
 
 
 
