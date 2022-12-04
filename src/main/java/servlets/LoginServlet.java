@@ -1,5 +1,6 @@
 package servlets;
 import hotelapp.DatabaseHandler;
+import hotelapp.utils.UserManager;
 import org.apache.commons.text.StringEscapeUtils;
 import org.apache.velocity.Template;
 import org.apache.velocity.VelocityContext;
@@ -67,8 +68,20 @@ public class LoginServlet extends HttpServlet {
 
         if (flag) {
             Cookie userCookie = new Cookie("username", username);
-            userCookie.setMaxAge(30*60);
-            response.addCookie(userCookie);
+            userCookie.setMaxAge(30*60*60*24*365);
+            Cookie[] cookies = request.getCookies();
+            if (cookies == null) {
+                response.addCookie(userCookie);
+            } else {
+                for (Cookie cookie : cookies) {
+                    if (cookie.getName().equals("username")) {
+                        cookie.setValue(username);
+                        response.addCookie(cookie);
+                    }
+                }
+            }
+
+            UserManager.setLastLoggedIn(request, response);
             response.sendRedirect("/search?username=" + username);
 
         }

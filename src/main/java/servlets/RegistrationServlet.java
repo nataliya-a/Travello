@@ -33,7 +33,6 @@ public class RegistrationServlet extends HttpServlet {
         PrintWriter out = response.getWriter();
 
         if (UserManager.isLoggedIn(request.getCookies())) {
-            out.println("<h1>You are already logged in!</h1>");
             response.sendRedirect("/search");
             return;
         }
@@ -53,7 +52,7 @@ public class RegistrationServlet extends HttpServlet {
      */
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
-            throws ServletException, IOException {
+            throws IOException {
 
         response.setContentType("text/html");
         response.setStatus(HttpServletResponse.SC_OK);
@@ -65,7 +64,6 @@ public class RegistrationServlet extends HttpServlet {
         if (checkPassword(password) && availableUsername(usernameParam)) {
             DatabaseHandler dbHandler = DatabaseHandler.getInstance();
             dbHandler.registerUser(usernameParam, password);
-//            response.getWriter().println("Successfully registered the user " + usernameParam);
             PrintWriter out = response.getWriter();
             VelocityEngine ve = (VelocityEngine) request.getServletContext().getAttribute("templateEngine");
             VelocityContext context = new VelocityContext();
