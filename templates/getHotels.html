@@ -3,7 +3,13 @@
 <head>
   <title>Hotels</title>
   <meta charset="utf-8">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
 
+
+  #parse("templates/navbar.html")
 </head>
 <body>
 
@@ -13,15 +19,25 @@
   </center>
 </div>
 <body>
-  <center>
-    <h3> Hotels: </h3>
-     #foreach($hotel in $hotels)
-    <a href="hotels?hotelId=$hotel.getHotelID()"><p>$hotel.getHotelName()</p></a>
-    #end
-    <form action="logout" method="get">
-      <input type = "submit" value = "Logout" name = "logout" >
-    </form>
+<div class="jumbotron">
+  <center  class="wrapper" style="padding-top: 10px;">
+
+    <h3> Search Result: </h3>
+    <!--    grid display for hotel names-->
+    <div class="row">
+      #foreach($hotelId in $hotels.keySet())
+      <div class="col-sm-4">
+        <div class="card" style="width: 18rem; margin: 5px; height: 10rem;">
+          <div class="card-body">
+            <h5 class="card-title">$hotels.get($hotelId)</h5>
+            <a href="hotels?hotelId=$hotelId" class="btn" style=" background-color: #2f3a55; color: white; font-weight: 700" >View Hotel</a>
+          </div>
+        </div>
+      </div>
+      #end
+    </div>
   </center>
+</div>
 </body>
 
 </body>

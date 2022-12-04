@@ -13,6 +13,12 @@
             integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
             crossorigin="anonymous"></script>
 
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.3/dist/leaflet.css"
+          integrity="sha256-kLaT2GOSpHechhsozzB+flnD+zUyjE2LlfWPgU04xyI="
+          crossorigin=""/>
+    <script src="https://unpkg.com/leaflet@1.9.3/dist/leaflet.js"
+            integrity="sha256-WBkoXOwTeyKclOHuWtc+i2uENFpDZ9YPdf5Hf+D7ewM="
+            crossorigin=""></script>
 
     #parse("templates/navbar.html")
 </head>
@@ -54,12 +60,20 @@
                         </svg>
                     </button>
                     #end
+
+                    <button type="button" class="btn btn-success" data-toggle="modal" data-target="#weatherModal" onclick="getWeather()">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor"
+                             class="bi bi-cloud-rain" viewBox="0 0 16 16">
+                            <path d="M4.158 12.025a.5.5 0 0 1 .316.633l-.5 1.5a.5.5 0 0 1-.948-.316l.5-1.5a.5.5 0 0 1 .632-.317zm3 0a.5.5 0 0 1 .316.633l-1 3a.5.5 0 0 1-.948-.316l1-3a.5.5 0 0 1 .632-.317zm3 0a.5.5 0 0 1 .316.633l-.5 1.5a.5.5 0 0 1-.948-.316l.5-1.5a.5.5 0 0 1 .632-.317zm3 0a.5.5 0 0 1 .316.633l-1 3a.5.5 0 1 1-.948-.316l1-3a.5.5 0 0 1 .632-.317zm.247-6.998a5.001 5.001 0 0 0-9.499-1.004A3.5 3.5 0 1 0 3.5 11H13a3 3 0 0 0 .405-5.973zM8.5 2a4 4 0 0 1 3.976 3.555.5.5 0 0 0 .5.445H13a2 2 0 0 1 0 4H3.5a2.5 2.5 0 1 1 .605-4.926.5.5 0 0 0 .596-.329A4.002 4.002 0 0 1 8.5 2z"></path>
+                        </svg>
+                    </button>
+
                 </form>
             </div>
 
 
             <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
-                 aria-hidden="true">
+                 aria-hidden="true" style="margin-top: 10px;">
                 <div class="modal-dialog" role="document">
                     <div class="modal-content">
                         <div class="modal-header">
@@ -102,6 +116,22 @@
                     </div>
                 </div>
             </div>
+            <div class="modal fade" id="weatherModal" tabindex="-1" role="dialog" aria-labelledby="weatherModalLabel"
+                 aria-hidden="true" style="margin-top: 10px;">
+                <div class="modal-dialog" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="weatherModalLabel">Weather</h5>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                        <div class="modal-body text-left" id="weatherContainer">
+                            <p>fetching weather data.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
 
 
             <p><b>Hotel ID :</b> $hotel.get("hotelID")</p>
@@ -113,7 +143,10 @@
 
             <input type="hidden" id="expediaLink" value="$expediaLink">
 
-            <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
+            <div id="map" style="width: 100%; height: 400px;"></div>
+
+            <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal"
+                    style="margin-top: 10px;">
                 Add Review
             </button>
 
@@ -160,7 +193,9 @@
                     #set($pages = $pages + 1)
                     #end
                     #foreach($page in [1..$pages])
-                    <li class="page-item #if($currentPage == $page) active #end"><a class="page-link" href="/hotels?hotelId=$hotel.get('hotelID')&page=$page">$page</a></li>
+                    <li class="page-item #if($currentPage == $page) active #end"><a class="page-link"
+                                                                                    href="/hotels?hotelId=$hotel.get('hotelID')&page=$page">$page</a>
+                    </li>
                     #end
                     #end
 
@@ -170,7 +205,7 @@
             #set($start = ($currentPage - 1) * 5)
             #set($end = $start + 4)
             #if ($end > $reviews.size())
-                #set($end = $reviews.size() - 1)
+            #set($end = $reviews.size() - 1)
             #end
             #foreach($i in [$start..$end])
             #set($review = $reviews.get($i))
@@ -206,6 +241,9 @@
         </div>
     </div>
 
+    <input type="hidden" id="lat" value="$hotel.get('lat')">
+    <input type="hidden" id="lon" value="$hotel.get('lon')">
+    <input type="hidden" id="hotelName" value="$hotel.get('hotelName')">
 
     <script>
     function validateForm() {
@@ -234,6 +272,25 @@
     }
 
 
+    function getWeather() {
+        var lat = document.getElementById("lat").value;
+        var lon = document.getElementById("lon").value;
+        var url = 'http://api.weatherstack.com/current?access_key=76c5d82ba52ee8f52ce2b5d97c801971&query=' + lat + ',' + lon;
+        var weatherContainer = document.getElementById('weatherContainer');
+        fetch(url)
+            .then(function (response) {
+                return response.json();
+            })
+            .then(function (data) {
+                var weather = data.current.weather_descriptions[0];
+                var temperature = data.current.temperature;
+                var windSpeed = data.current.wind_speed;
+                weatherContainer.innerHTML = 'Weather: ' + weather + ', Temperature: ' + temperature + ', Wind Speed: ' + windSpeed;
+
+            });
+    }
+
+
     </script>
 
     <script>
@@ -251,11 +308,29 @@
     })
   }
 
+<!--  map setup-->
+
+     var lat = document.getElementById("lat").value;
+     var lon = document.getElementById("lon").value;
+        var hotelName = document.getElementById("hotelName").value;
+     var map = L.map('map').setView([lat, lon], 13);
+     var url = 'https://leafletjs.com/examples/choropleth/us-states.js';
+     var data = 'https://tile.openstreetmap.org/{z}/{x}/{y}.png';
+
+
+     fetch(url)
+         .then(function(response) {
+            L.tileLayer(data, {
+                        maxZoom: 19,
+                        attribution: ''
+                    }).addTo(map);
+            var marker = L.marker([lat, lon]).addTo(map);
+            marker.bindPopup(hotelName).openPopup();
+            L.addMapLayer(response.json());
+         })
 
     </script>
 
-
-    <!--</body>-->
 </div>
 </body>
 </html>
