@@ -1,93 +1,213 @@
 <head>
-  <title>Hotel Details</title>
-  <meta charset="utf-8">
+    <title>Hotel Details</title>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css"
+          integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+            integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+            crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js"
+            integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+            crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js"
+            integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+            crossorigin="anonymous"></script>
+
+
+    #parse("templates/navbar.html")
 </head>
 <body>
 
 <!--<div class="jumbotron text-center">-->
-<div>
-  <center>
-    <h1>$hotel.getHotelName()</h1>
-  </center>
-</div>
-<body>
-<center>
+<div class="jumbotron container" style="padding-top: 100px;">
+    <!--  two columns for content-->
+    <div class="row" style="padding-top: 10px;">
+        <div class="col-sm-6" style="height: 90vh; overflow-y:auto">
+            <h1>
+                #if($isFavoredHotel == true)
+                <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor"
+                     class="bi bi-heart-fill" viewBox="0 0 16 16">
+                    <path fill-rule="evenodd"
+                          d="M8 1.314C12.438-3.248 23.534 4.735 8 15-7.534 4.736 3.562-3.248 8 1.314z"></path>
+                </svg>
+                #end
+                <b>$hotel.get("hotelName")</b>
+            </h1>
 
-  <p><b>Hotel ID :</b> $hotel.getHotelID()</p>
-  <p><b>Address :</b> $hotel.getAddress()</p>
-    <p><b>City :</b> $hotel.getCity()</p>
-    <p><b>State :</b> $hotel.getState()</p>
-  <p><b>Average Ratings :</b> $rating</p>
-  <p><b>Expedia :</b> <a href=$expediaLink> Click Here </a> </p>
+            <div style="width: 100vw;">
+                <form action="addFav" method="post">
+                    <button type="button" class="btn btn-dark" onclick="directToExpedia()">
+                        <img src="https://is4-ssl.mzstatic.com/image/thumb/Purple122/v4/30/d5/8d/30d58d46-f465-f53b-8549-a68e856a1385/AppIcon-0-1x_U007emarketing-0-7-0-85-220.png/512x512bb.jpg"
+                             alt="expedia logo"
+                             style="width: 30px; height: 30px; border-radius: 50%;">
+                    </button>
 
-  <div class="container" style="text-align:center">
-    <h2>Book the hotel</h2>
-    <form action="booking" method="post" onsubmit="return validateForm()">
-<!--      hidden field for hotelId-->
-        <input type="hidden" name="hotelId" value="$hotel.getHotelID()">
-      <div class="form-group">
-        <label for="checkIn">Check In:</label>
-        <input type="date" class="form-control" id="checkIn" placeholder="Enter check in date" name="checkIn" required>
-      </div>
-      <div class="form-group">
-        <label for="checkOut">Check Out:</label>
-        <input type="date" class="form-control" id="checkOut" placeholder="Enter check out date" name="checkOut" required>
-      </div>
-      <button type="submit" class="btn btn-default">Submit</button>
-    </form>
-  </div>
-  <p id="error" style="color: red"></p>
+                    #if($isFavoredHotel == false)
 
-  #if($myBookedDates && $myBookedDates.size() > 0)
-  <h2>My booked dates</h2>
-    #foreach($bookedDate in $myBookedDates)
-    <p>$bookedDate</p>
-    #end
-    #end
-
-  <hr>
-  <hr>
-  <h3>Add Review:</h3>
-  <form action="hotels?hotelId=$hotel.getHotelID()" method="post">
-    <input type="hidden" name="hotelId" value="$hotel.getHotelID()">
-    <input type="hidden" name="username" value="$username">
-    <textarea rows="1" cols="60" name="title" placeholder="Title" required></textarea> <br><br>
-    <textarea rows="5" cols="60" name="review" placeholder="Review text" required></textarea>
-    <br><br>
-    <input type="submit" value="Submit">
-  </form>
-  <hr>
-  <h2><p align="justify"><b>Reviews :</b></p></h2>
-  #foreach($review in $reviews)
-  <h4 align="justify">$review.getTitle()</h4>
-  <p align="justify"><b>Review </b> by <b style="color: #018AE6;">$review.getUserNickname()</b> on <b>$review.getReviewSubmissionTime()</b></p>
-
-  <p align="justify">$review.getReviewText()</p>
-  #if($review.getUserNickname() == $username)
-  <!--  show a button for edit and a button for delete-->
-  <p align="justify">
-  <form action="edit" method="get">
-    <input type="hidden" name="hotelId" value="$hotel.getHotelID()">
-    <input type="hidden" name="username" value="$username">
-    <input type="hidden" name="reviewId" value="$review.getReviewID()">
-    <input type="hidden" name="title" value="$review.getTitle()">
-    <input type="hidden" name="reviewText" value="$review.getReviewText()">
-    <input type="submit" name="edit" value="Edit">
-    <input type="submit" name="delete" value="Delete">
-  </form>
-  </p>
-
-  #end
-  <br>
-  #end
-    <form action="logout" method="get">
-      <input  type = "submit" value = "Logout" name = "logout" >
-    </form>
+                    <input type="hidden" name="hotelId" value="$hotel.get('hotelID')">
+                    <input type="hidden" name="hotelName" value="$hotel.get('hotelName')">
+                    <button type="submit" class="btn btn-outline-danger">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor"
+                             class="bi bi-heart-fill" viewBox="0 0 16 16">
+                            <path fill-rule="evenodd"
+                                  d="M8 1.314C12.438-3.248 23.534 4.735 8 15-7.534 4.736 3.562-3.248 8 1.314z"></path>
+                        </svg>
+                    </button>
+                    #end
+                </form>
+            </div>
 
 
-</center>
+            <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+                 aria-hidden="true">
+                <div class="modal-dialog" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="exampleModalLabel">Add Review</h5>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                        <div class="modal-body text-left">
+                            <form action="/hotels" method="post">
+                                <input type="hidden" name="hotelId" value="$hotel.get('hotelID')">
+                                <input type="hidden" name="username" value="$username">
+                                <div class="form-group row">
+                                    <label for="title" class="col-sm-2 col-form-label">Title</label>
+                                    <div class="col-sm-10">
+                                        <input type="text" class="form-control" id="title" name="title" rows="3">
+                                    </div>
+                                </div>
+                                <div class="form-group row">
+                                    <label for="review" class="col-sm-2 col-form-label">Review</label>
+                                    <div class="col-sm-10">
+                                        <textarea class="form-control" id="review" name="review" rows="3"></textarea>
+                                    </div>
+                                </div>
+                                <div class="form-group
+                                    row">
+                                    <label for="rating" class="col-sm-2 col-form-label">Rating</label>
+                                    <div class="col-sm-10">
+                                        <input type="number" class="form-control" id="rating" name="rating" min="1"
+                                               max="5">
+                                    </div>
+                                </div>
+                                <div class="form-group row">
+                                    <div class="col-sm-10">
+                                        <button type="submit" class="btn btn-primary">Add Review</button>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
 
-<script>
+
+            <p><b>Hotel ID :</b> $hotel.get("hotelID")</p>
+            <p><b>Address :</b> $hotel.get("address")</p>
+            <p><b>City :</b> $hotel.get("city")</p>
+            <p><b>State :</b> $hotel.get("state")</p>
+            <p><b>AverageRating :</b> $rating </p>
+
+
+            <input type="hidden" id="expediaLink" value="$expediaLink">
+
+            <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
+                Add Review
+            </button>
+
+
+            <hr>
+            <h3>Book the hotel</h3>
+            <form action="booking" method="post" onsubmit="return validateForm()">
+                <input type="hidden" name="hotelId" value="$hotel.getHotelID()">
+                <div class="form-group">
+                    <label for="checkIn">Check In:</label>
+                    <input type="date" class="form-control" id="checkIn" placeholder="Enter check in date"
+                           name="checkIn" required>
+                </div>
+                <div class="form-group">
+                    <label for="checkOut">Check Out:</label>
+                    <input type="date" class="form-control" id="checkOut" placeholder="Enter check out date"
+                           name="checkOut" required>
+                </div>
+                <button type="submit" class="btn btn-default">Submit</button>
+            </form>
+            <p id="error" style="color: red"></p>
+
+            #if($myBookedDates && $myBookedDates.size() > 0)
+            <h2>My booked dates</h2>
+            #foreach($bookedDate in $myBookedDates)
+            <p>$bookedDate</p>
+            #end
+            #end
+
+        </div>
+        <div class="col-sm-6" style="height: 90vh; overflow-y:auto">
+            <h2><p align="justify"><b>Reviews :</b></p></h2>
+            #if($reviews.size() == 0)
+            <p>No reviews yet</p>
+            #else
+
+            #set($i = 0)
+
+            <nav aria-label="Page navigation example">
+                <ul class="pagination justify-content-center">
+                    #if($reviews.size() > 5)
+                    #set($pages = $reviews.size() / 5)
+                    #if($reviews.size() % 5 != 0)
+                    #set($pages = $pages + 1)
+                    #end
+                    #foreach($page in [1..$pages])
+                    <li class="page-item #if($currentPage == $page) active #end"><a class="page-link" href="/hotels?hotelId=$hotel.get('hotelID')&page=$page">$page</a></li>
+                    #end
+                    #end
+
+                </ul>
+            </nav>
+
+            #set($start = ($currentPage - 1) * 5)
+            #set($end = $start + 4)
+            #if ($end > $reviews.size())
+                #set($end = $reviews.size() - 1)
+            #end
+            #foreach($i in [$start..$end])
+            #set($review = $reviews.get($i))
+            <h4 align="justify">$review.get("reviewTitle")</h4>
+            <p align="justify"><b>Review </b> by <b style="color: #018AE6;">$review.get("username")</b> on <b>$review.get("reviewDate")</b>
+            </p>
+
+            <p align="justify">$review.get("reviewText")</p>
+
+            #if($review.get("username") == $username)
+            <!--  show a button for edit and a button for delete-->
+
+            <p align="justify">
+            <form action="edit" method="get">
+                <input type="hidden" name="hotelId" value=$review.get("hotelID")>
+                <input type="hidden" name="username" value=$review.get("username")>
+                <input type="hidden" name="reviewId" value="$review.get('reviewID')">
+                <input type="hidden" name="title" value=$review.get("reviewTitle")>
+                <input type="hidden" name="reviewText" value=$review.get("reviewText")>
+                <input type="submit" name="edit" value="Edit">
+                <input type="submit" name="delete" value="Delete">
+            </form>
+            </p>
+
+            #end
+            <br>
+            #end
+            #end
+
+            </center>
+
+            <input type="hidden" id="hotelId" value="$hotel.get('hotelID')">
+        </div>
+    </div>
+
+
+    <script>
     function validateForm() {
         var checkIn = document.getElementById("checkIn").value;
         var checkOut = document.getElementById("checkOut").value;
@@ -112,9 +232,30 @@
         }
         return true;
     }
-</script>
 
-</body>
 
+    </script>
+
+    <script>
+  function directToExpedia() {
+    var expediaLink = document.getElementById("expediaLink").value;
+    var hotelId =  document.getElementById("hotelId").value;
+    console.log(hotelId);
+    window.open(expediaLink);
+    fetch('/hotels', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'text/plain'
+      },
+      body: "hotelId=" + hotelId + "&link=" + expediaLink
+    })
+  }
+
+
+    </script>
+
+
+    <!--</body>-->
+</div>
 </body>
 </html>
