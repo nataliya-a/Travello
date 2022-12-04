@@ -1,5 +1,6 @@
 package servlets;
 
+import hotelapp.DatabaseHandler;
 import hotelapp.Hotel;
 import hotelapp.ThreadSafeHotelData;
 import hotelapp.utils.UserManager;
@@ -16,6 +17,7 @@ import java.io.PrintWriter;
 import java.io.StringWriter;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Map;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
@@ -32,15 +34,15 @@ public class SearchServlet extends HttpServlet {
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws IOException {
         response.setContentType("text/html");
         response.setStatus(HttpServletResponse.SC_OK);
-        String username = request.getParameter("username");
         PrintWriter out = response.getWriter();
         if (!UserManager.isLoggedIn(request.getCookies())) {
-            out.println("<h1>You are not logged in!</h1>");
+            response.sendRedirect("/login");
             return;
         }
 
         VelocityEngine ve = (VelocityEngine) request.getServletContext().getAttribute("templateEngine");
         VelocityContext context = new VelocityContext();
+        String username = UserManager.getUsername(request.getCookies());
         context.put("username", username);
         Template template = ve.getTemplate("templates/search.html");
         StringWriter writer = new StringWriter();
@@ -56,29 +58,25 @@ public class SearchServlet extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws IOException {
         response.setContentType("text/html");
         response.setStatus(HttpServletResponse.SC_OK);
+        DatabaseHandler db = DatabaseHandler.getInstance();
         PrintWriter out = response.getWriter();
         String search = request.getParameter("search");
         String logout = request.getParameter("logout");
         String username = request.getParameter("username");
-        System.out.println("(Search)username:" + username);
         if (logout != null) {
             response.sendRedirect("/logout");
         }
 
         search = StringEscapeUtils.escapeHtml4(search);
 
+        Map<String, String> hotelsWithID = db.getHotelName(search);
 
 
-        List<Hotel> hotels = getHotels(search,request);
-        List<String> hotelNames = new ArrayList<>();
-        for (Hotel hotel : hotels) {
-            hotelNames.add(hotel.getHotelName());
-        }
         VelocityEngine ve = (VelocityEngine) request.getServletContext().getAttribute("templateEngine");
         VelocityContext context = new VelocityContext();
         Template template = ve.getTemplate("templates/getHotels.html");
         context.put("search", search);
-        context.put("hotels", hotels);
+        context.put("hotels", hotelsWithID);
         context.put("username", username);
         StringWriter writer = new StringWriter();
         template.merge(context, writer);
