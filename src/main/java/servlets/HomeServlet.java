@@ -1,5 +1,6 @@
 package servlets;
 
+import hotelapp.utils.UserManager;
 import org.apache.velocity.Template;
 import org.apache.velocity.VelocityContext;
 import org.apache.velocity.app.VelocityEngine;
@@ -30,6 +31,9 @@ public class HomeServlet extends HttpServlet {
         VelocityEngine ve = (VelocityEngine) request.getServletContext().getAttribute("templateEngine");
         VelocityContext context = new VelocityContext();
         Template template = ve.getTemplate("templates/home.html");
+        if (UserManager.isLoggedIn(request.getCookies())) {
+            context.put("username", UserManager.getUsername(request.getCookies()));
+        }
         StringWriter writer = new StringWriter();
         template.merge(context, writer);
         out.println(writer);
