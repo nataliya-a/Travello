@@ -44,5 +44,6 @@ public class LogoutServlet extends HttpServlet {
                 response.addCookie(cookie);
             }
         }
+
     }
 }

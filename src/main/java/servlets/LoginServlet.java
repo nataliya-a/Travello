@@ -94,6 +94,7 @@ public class LoginServlet extends HttpServlet {
             StringWriter writer = new StringWriter();
             template.merge(context, writer);
             out.println(writer);
+
         }
 
     }

@@ -63,6 +63,7 @@ public class HotelServlet extends HttpServlet {
                 rating = rating / reviews.size();
             }
 
+
             String city = hotelDetails.get("city").replace(" ", "-");
 
             String hotelName = hotelDetails.get("hotelName").replace(" ", "-");
