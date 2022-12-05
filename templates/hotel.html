@@ -154,7 +154,8 @@
             <hr>
             <h3>Book the hotel</h3>
             <form action="booking" method="post" onsubmit="return validateForm()">
-                <input type="hidden" name="hotelId" value="$hotel.getHotelID()">
+                <input type="hidden" name="hotelId" value="$hotel.get('hotelID')">
+<!--                "$hotel.getHotelID()"-->
                 <div class="form-group">
                     <label for="checkIn">Check In:</label>
                     <input type="date" class="form-control" id="checkIn" placeholder="Enter check in date"
