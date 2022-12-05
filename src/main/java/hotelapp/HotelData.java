@@ -19,9 +19,7 @@ public class HotelData {
      * @return true if the room is available, false otherwise
      */
     public boolean canBook(String hotelId, LocalDate checkIn, LocalDate checkOut) {
-        if (!hotelsMap.containsKey(hotelId)) {
-            return false;
-        }
+
         Map<LocalDate, Set<String>> hotelBookedDates = bookedDates.get(hotelId);
         if (hotelBookedDates == null) {
             return true;
@@ -117,7 +115,9 @@ public class HotelData {
         if (hotelBookedDates == null) {
             return new ArrayList<>();
         }
+        System.out.println(hotelBookedDates);
         return new ArrayList<>(hotelBookedDates.keySet());
+
     }
 
     /**  given a hotelId and userId, return the all booked dates */
