@@ -40,15 +40,24 @@
                              alt="expedia logo"
                              style="width: 30px; height: 30px; border-radius: 50%;">
                     </button>
-
-                    <button id="heartButton" type="button" class="btn btn-outline-danger" onclick="handleFav()"
-                        disabled="$isFavoredHotel">
+                    #if($isFavoredHotel)
+                    <button type="button" class="btn btn-outline-danger" disabled>
                         <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor"
                              class="bi bi-heart-fill" viewBox="0 0 16 16">
                             <path fill-rule="evenodd"
                                   d="M8 1.314C12.438-3.248 23.534 4.735 8 15-7.534 4.736 3.562-3.248 8 1.314z"></path>
                         </svg>
                     </button>
+                    #else
+                        <button id="heartButton" type="button" class="btn btn-outline-danger" onclick="handleFav()">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor"
+                                 class="bi bi-heart-fill" viewBox="0 0 16 16">
+                                <path fill-rule="evenodd"
+                                      d="M8 1.314C12.438-3.248 23.534 4.735 8 15-7.534 4.736 3.562-3.248 8 1.314z"></path>
+                            </svg>
+                        </button>
+                    #end
+
 
                     <button type="button" class="btn btn-success" data-toggle="modal" data-target="#weatherModal" onclick="getWeather()">
                         <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor"
@@ -172,7 +181,6 @@
             <p>No reviews yet</p>
             #else
 
-            #set($i = 0)
             <!--   bootstrap documentation: https://getbootstrap.com/docs/4.0/components/pagination/-->
             <nav aria-label="nav">
                 <ul class="pagination justify-content-center">
@@ -189,7 +197,7 @@
                         <a class="page-link" href="/hotels?hotelId=$hotel.get('hotelID')&page=$page">$page</a>
                     </li>
                     #end
-                    #end
+
 
                 </ul>
             </nav>
@@ -230,9 +238,8 @@
             </p>
 
             #end
-            <br>
             #end
-
+            #end
 
             </center>
 

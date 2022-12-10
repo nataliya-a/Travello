@@ -4,8 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="1306db4f-b61b-4225-94e6-3327eef60eb1" name="Changes" comment="clean code as per guidance">
+    <list default="true" id="1306db4f-b61b-4225-94e6-3327eef60eb1" name="Changes" comment="refactor code with more docs">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/hotelapp/utils/UserManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/hotelapp/utils/UserManager.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/hotel.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/hotel.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -117,13 +118,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1668725048064</updated>
-    </task>
-    <task id="LOCAL-00004" summary="Classes Hotel, HotelData and HotelParser imported from previous projects">
-      <created>1669020915641</created>
-      <option name="number" value="00004" />
-      <option name="presentableId" value="LOCAL-00004" />
-      <option name="project" value="LOCAL" />
-      <updated>1669020915641</updated>
     </task>
     <task id="LOCAL-00005" summary="LoginServlet.java created">
       <created>1669021029136</created>
@@ -461,7 +455,14 @@
       <option name="project" value="LOCAL" />
       <updated>1670638178108</updated>
     </task>
-    <option name="localTasksCounter" value="53" />
+    <task id="LOCAL-00053" summary="refactor code with more docs">
+      <created>1670639712386</created>
+      <option name="number" value="00053" />
+      <option name="presentableId" value="LOCAL-00053" />
+      <option name="project" value="LOCAL" />
+      <updated>1670639712388</updated>
+    </task>
+    <option name="localTasksCounter" value="54" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -476,7 +477,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="hotel.html created" />
     <MESSAGE value="xml files" />
     <MESSAGE value="refactored HTML pages" />
     <MESSAGE value="addressed code review comments" />
@@ -501,7 +501,8 @@
     <MESSAGE value="changes hotel.html for the frontend to look better" />
     <MESSAGE value="refactored servlets to fix issues with SQL databse" />
     <MESSAGE value="clean code as per guidance" />
-    <option name="LAST_COMMIT_MESSAGE" value="clean code as per guidance" />
+    <MESSAGE value="refactor code with more docs" />
+    <option name="LAST_COMMIT_MESSAGE" value="refactor code with more docs" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

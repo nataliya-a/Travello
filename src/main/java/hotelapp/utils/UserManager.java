@@ -56,7 +56,6 @@ public class UserManager {
         // we need to see if this is the first time the web server is running. there should be no cookies
         // so we need to add the prev cookie with current time
         if (!hasPrevCookie(request.getCookies())) {
-            System.out.println("fjkslkdlk");
             // if not, we need to update the last login time
             Cookie cookie = new Cookie("prev", LocalDateTime.now().format(DateTimeFormatter.ofPattern("yyyy-MM-dd:HH:mm:ss")));
             cookie.setMaxAge(60 * 60 * 24 * 365);
