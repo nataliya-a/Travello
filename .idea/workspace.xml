@@ -4,13 +4,23 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="1306db4f-b61b-4225-94e6-3327eef60eb1" name="Changes" comment="build frontend for login and register">
+    <list default="true" id="1306db4f-b61b-4225-94e6-3327eef60eb1" name="Changes" comment="refactored servlets to fix issues with SQL databse">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/hotelapp/ParseArgs.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/hotelapp/ParseArgs.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/servlets/EditReviewServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/servlets/EditReviewServlet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/hotelapp/utils/UserManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/hotelapp/utils/UserManager.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/servlets/AddFavServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/servlets/AddFavServlet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/servlets/LoginServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/servlets/LoginServlet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/servlets/LogoutServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/servlets/LogoutServlet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/servlets/MyProfileServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/servlets/MyProfileServlet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/servlets/SearchServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/servlets/SearchServlet.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/editReview.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/editReview.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/getHotels.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/getHotels.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/home.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/home.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/hotel.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/hotel.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/login.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/login.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/myprofile.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/myprofile.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/navbar.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/nav.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/register.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/register.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/search.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/search.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -121,20 +131,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1668725048064</updated>
-    </task>
-    <task id="LOCAL-00001" summary="HotelServer.java updated with mappings">
-      <created>1669020722065</created>
-      <option name="number" value="00001" />
-      <option name="presentableId" value="LOCAL-00001" />
-      <option name="project" value="LOCAL" />
-      <updated>1669020722065</updated>
-    </task>
-    <task id="LOCAL-00002" summary="HTML pages created along with database.properties">
-      <created>1669020796323</created>
-      <option name="number" value="00002" />
-      <option name="presentableId" value="LOCAL-00002" />
-      <option name="project" value="LOCAL" />
-      <updated>1669020796323</updated>
     </task>
     <task id="LOCAL-00003" summary="Class DatabaseHandler created">
       <created>1669020857091</created>
@@ -437,7 +433,49 @@
       <option name="project" value="LOCAL" />
       <updated>1670130614592</updated>
     </task>
-    <option name="localTasksCounter" value="46" />
+    <task id="LOCAL-00046" summary="build frontend for editReview page">
+      <created>1670136383218</created>
+      <option name="number" value="00046" />
+      <option name="presentableId" value="LOCAL-00046" />
+      <option name="project" value="LOCAL" />
+      <updated>1670136383218</updated>
+    </task>
+    <task id="LOCAL-00047" summary="build map and weather API for hotel page">
+      <created>1670136407451</created>
+      <option name="number" value="00047" />
+      <option name="presentableId" value="LOCAL-00047" />
+      <option name="project" value="LOCAL" />
+      <updated>1670136407451</updated>
+    </task>
+    <task id="LOCAL-00048" summary="clean up of config files">
+      <created>1670136421935</created>
+      <option name="number" value="00048" />
+      <option name="presentableId" value="LOCAL-00048" />
+      <option name="project" value="LOCAL" />
+      <updated>1670136421935</updated>
+    </task>
+    <task id="LOCAL-00049" summary="changes to HotelData.java">
+      <created>1670206154739</created>
+      <option name="number" value="00049" />
+      <option name="presentableId" value="LOCAL-00049" />
+      <option name="project" value="LOCAL" />
+      <updated>1670206154739</updated>
+    </task>
+    <task id="LOCAL-00050" summary="changes hotel.html for the frontend to look better">
+      <created>1670206183846</created>
+      <option name="number" value="00050" />
+      <option name="presentableId" value="LOCAL-00050" />
+      <option name="project" value="LOCAL" />
+      <updated>1670206183848</updated>
+    </task>
+    <task id="LOCAL-00051" summary="refactored servlets to fix issues with SQL databse">
+      <created>1670206306265</created>
+      <option name="number" value="00051" />
+      <option name="presentableId" value="LOCAL-00051" />
+      <option name="project" value="LOCAL" />
+      <updated>1670206306265</updated>
+    </task>
+    <option name="localTasksCounter" value="52" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -452,12 +490,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="RegistrationServlet.java and register.html created" />
-    <MESSAGE value="SearchServlet.java created" />
-    <MESSAGE value="PreparedStatements.java created" />
-    <MESSAGE value="HomeServlet.java and home.html created" />
-    <MESSAGE value="HotelServer.java class created" />
-    <MESSAGE value="ParseArgs class created to parse the CLI args" />
     <MESSAGE value="EditReviewServlet.java and editReview.html created" />
     <MESSAGE value="hotel.html created" />
     <MESSAGE value="xml files" />
@@ -477,7 +509,13 @@
     <MESSAGE value="build frontend for search page" />
     <MESSAGE value="allow user to favorite a hotel" />
     <MESSAGE value="build frontend for login and register" />
-    <option name="LAST_COMMIT_MESSAGE" value="build frontend for login and register" />
+    <MESSAGE value="build frontend for editReview page" />
+    <MESSAGE value="build map and weather API for hotel page" />
+    <MESSAGE value="clean up of config files" />
+    <MESSAGE value="changes to HotelData.java" />
+    <MESSAGE value="changes hotel.html for the frontend to look better" />
+    <MESSAGE value="refactored servlets to fix issues with SQL databse" />
+    <option name="LAST_COMMIT_MESSAGE" value="refactored servlets to fix issues with SQL databse" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

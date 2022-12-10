@@ -36,6 +36,7 @@ public class SearchServlet extends HttpServlet {
         response.setStatus(HttpServletResponse.SC_OK);
         PrintWriter out = response.getWriter();
         if (!UserManager.isLoggedIn(request.getCookies())) {
+            System.out.println("User not logged in");
             response.sendRedirect("/login");
             return;
         }

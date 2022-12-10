@@ -18,9 +18,11 @@ public class UserManager {
      */
     public static boolean isLoggedIn(Cookie[] cookies) {
         if (cookies == null) {
+            System.out.println("No cookies");
             return false;
         }
         for (Cookie cookie : cookies) {
+            System.out.println(cookie.getName());
             if (cookie.getName().equals("username")) {
                 return true;
             }
@@ -46,53 +48,93 @@ public class UserManager {
         return null;
     }
 
-    /** Checks the last login time for user.
+    /** Updates the last login time for user.
      * @param request request
      * @param response response
      */
-    public static void setLastLoggedIn(HttpServletRequest request, HttpServletResponse response) {
-        Cookie[] cookies = request.getCookies();
-        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("uuuu/MM/dd--HH:mm:ss");
-        LocalDateTime now = LocalDateTime.now();
-        if (cookies == null) {
-            Cookie currentTime = new Cookie("now", formatter.format(now));
-            currentTime.setMaxAge(60 * 60 * 24 * 365);
-            response.addCookie(currentTime);
-
-            Cookie lastLoggedInCookie = new Cookie("lastLoginTime", formatter.format(now));
-            lastLoggedInCookie.setMaxAge(60 * 60 * 24 * 365);
-            response.addCookie(lastLoggedInCookie);
-            return;
+    public static void updatePreviousLogIn(HttpServletRequest request, HttpServletResponse response, String username) {
+        // we need to see if this is the first time the web server is running. there should be no cookies
+        // so we need to add the prev cookie with current time
+        if (!hasPrevCookie(request.getCookies())) {
+            System.out.println("fjkslkdlk");
+            // if not, we need to update the last login time
+            Cookie cookie = new Cookie("prev", LocalDateTime.now().format(DateTimeFormatter.ofPattern("yyyy-MM-dd:HH:mm:ss")));
+            cookie.setMaxAge(60 * 60 * 24 * 365);
+            response.addCookie(cookie);
         }
 
-        for (Cookie cookie : cookies) {
-            if (cookie.getName().equals("now")) {
-                Cookie lastLoggedInCookie = new Cookie("lastLoginTime", cookie.getValue());
-                lastLoggedInCookie.setMaxAge(60 * 60 * 24 * 365);
-                response.addCookie(lastLoggedInCookie);
+        // if a user just registered, then there's no last login time for this user
+        if (!hasLastTimeForUserCookie(request.getCookies(), username)) {
+            Cookie cookie = new Cookie("lastLoginTimeForUser" + username, "Unseen");
+            cookie.setMaxAge(60 * 60 * 24 * 365);
+            response.addCookie(cookie);
 
-                cookie.setValue(formatter.format(now));
-                cookie.setMaxAge(60 * 60 * 24 * 365);
-                response.addCookie(cookie);
-                return;
+            Cookie updatedPrevCookie = new Cookie("prev", LocalDateTime.now().format(DateTimeFormatter.ofPattern("yyyy-MM-dd:HH:mm:ss")));
+            updatedPrevCookie.setMaxAge(60 * 60 * 24 * 365);
+            response.addCookie(updatedPrevCookie);
+        } else {
+            Cookie cookie = new Cookie("lastLoginTimeForUser" + username, getPrevCookie(request.getCookies()));
+            cookie.setMaxAge(60 * 60 * 24 * 365);
+            response.addCookie(cookie);
+
+            Cookie updatedPrevCookie = new Cookie("prev", LocalDateTime.now().format(DateTimeFormatter.ofPattern("yyyy-MM-dd:HH:mm:ss")));
+            updatedPrevCookie.setMaxAge(60 * 60 * 24 * 365);
+            response.addCookie(updatedPrevCookie);
+        }
+    }
+
+    /**
+     * Gets the prev time that can be set as the last login time
+     */
+    private static String getPrevCookie(Cookie[] cookies) {
+        for (Cookie cookie : cookies) {
+            if (cookie.getName().equals("prev")) {
+                return cookie.getValue();
             }
         }
-        Cookie currentTime = new Cookie("now", formatter.format(now));
-        currentTime.setMaxAge(60 * 60 * 24 * 365);
-        response.addCookie(currentTime);
+        return null;
+    }
 
-        Cookie lastLoggedInCookie = new Cookie("lastLoginTime", formatter.format(now));
-        lastLoggedInCookie.setMaxAge(60 * 60 * 24 * 365);
-        response.addCookie(lastLoggedInCookie);
+    /**
+     * Check if the cookies has prev cookie.
+     */
+    private static boolean hasPrevCookie(Cookie[] cookies) {
+        if (cookies == null) {
+            return false;
+        }
+        for (Cookie cookie : cookies) {
+            if (cookie.getName().equals("prev")) {
+                return true;
+            }
+        }
+        return false;
+    }
+
+    /**
+     * Gets the last login time for user.
+     * @param cookies  the cookies
+     * @param username the username
+     * @return        the last login time for user
+     */
+    private static boolean hasLastTimeForUserCookie(Cookie[] cookies, String username) {
+        if (cookies == null) {
+            return false;
+        }
+        for (Cookie cookie : cookies) {
+            if (cookie.getName().equals("lastLoginTimeForUser" + username)) {
+                return true;
+            }
+        }
+        return false;
     }
 
     /** Return the last logged in time.
      * @param cookies the cookies of the user
      * @return String of the last logged in time
      */
-    public static String getLastLoggedIn(Cookie[] cookies) {
+    public static String retrieveLastTimeLoginTime(Cookie[] cookies, String username) {
         for (Cookie cookie : cookies) {
-            if (cookie.getName().equals("lastLoginTime")) {
+            if (cookie.getName().equals("lastLoginTimeForUser" + username)) {
                 return cookie.getValue();
             }
         }

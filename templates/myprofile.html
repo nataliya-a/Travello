@@ -9,13 +9,13 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
 
 
-    #parse("templates/navbar.html")
+    #parse("templates/nav.html")
 </head>
 <body>
 
 <div class="jumbotron" style="padding-top: 100px;">
 
-    <p>Last Login Time: $lastLoginTime</p>
+    <p>Last Login Time: $lastTimeLoggedIn</p>
     <h1>My Expedia Visit History:</h1>
     #if($links.size() == 0)
         <p>You have not visited any Expedia pages yet.</p>

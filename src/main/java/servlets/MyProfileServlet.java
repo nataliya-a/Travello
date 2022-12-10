@@ -43,13 +43,13 @@ public class MyProfileServlet extends HttpServlet {
         System.out.println(links);
         VelocityEngine ve = (VelocityEngine) request.getServletContext().getAttribute("templateEngine");
         VelocityContext context = new VelocityContext();
-        context.put("username", UserManager.getUsername(request.getCookies()));
+        context.put("username", username);
 
         Template template = ve.getTemplate("templates/myprofile.html");
 
         context.put("links", links);
         context.put("favHotels", favHotels);
-        context.put("lastLoginTime", UserManager.getLastLoggedIn(request.getCookies()));
+        context.put("lastTimeLoggedIn", UserManager.retrieveLastTimeLoginTime(request.getCookies(), username));
 
         StringWriter writer = new StringWriter();
         template.merge(context, writer);

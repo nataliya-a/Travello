@@ -20,7 +20,7 @@
             integrity="sha256-WBkoXOwTeyKclOHuWtc+i2uENFpDZ9YPdf5Hf+D7ewM="
             crossorigin=""></script>
 
-    #parse("templates/navbar.html")
+    #parse("templates/nav.html")
 </head>
 <body>
 
@@ -29,37 +29,26 @@
     <!--  two columns for content-->
     <div class="row" style="padding-top: 10px;">
         <div class="col-sm-6" style="height: 90vh; overflow-y:auto">
-            <h1>
-                #if($isFavoredHotel == true)
-                <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor"
-                     class="bi bi-heart-fill" viewBox="0 0 16 16">
-                    <path fill-rule="evenodd"
-                          d="M8 1.314C12.438-3.248 23.534 4.735 8 15-7.534 4.736 3.562-3.248 8 1.314z"></path>
-                </svg>
-                #end
+            <h1 id="hotelNameH1">
                 <b>$hotel.get("hotelName")</b>
             </h1>
 
             <div style="width: 100vw;">
-                <form action="addFav" method="post">
+
                     <button type="button" class="btn btn-dark" onclick="directToExpedia()">
                         <img src="https://is4-ssl.mzstatic.com/image/thumb/Purple122/v4/30/d5/8d/30d58d46-f465-f53b-8549-a68e856a1385/AppIcon-0-1x_U007emarketing-0-7-0-85-220.png/512x512bb.jpg"
                              alt="expedia logo"
                              style="width: 30px; height: 30px; border-radius: 50%;">
                     </button>
 
-                    #if($isFavoredHotel == false)
-
-                    <input type="hidden" name="hotelId" value="$hotel.get('hotelID')">
-                    <input type="hidden" name="hotelName" value="$hotel.get('hotelName')">
-                    <button type="submit" class="btn btn-outline-danger">
+                    <button id="heartButton" type="button" class="btn btn-outline-danger" onclick="handleFav()"
+                        disabled="$isFavoredHotel">
                         <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor"
                              class="bi bi-heart-fill" viewBox="0 0 16 16">
                             <path fill-rule="evenodd"
                                   d="M8 1.314C12.438-3.248 23.534 4.735 8 15-7.534 4.736 3.562-3.248 8 1.314z"></path>
                         </svg>
                     </button>
-                    #end
 
                     <button type="button" class="btn btn-success" data-toggle="modal" data-target="#weatherModal" onclick="getWeather()">
                         <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor"
@@ -68,7 +57,6 @@
                         </svg>
                     </button>
 
-                </form>
             </div>
 
 
@@ -186,7 +174,7 @@
 
             #set($i = 0)
 
-            <nav aria-label="Page navigation example">
+            <nav aria-label="nav">
                 <ul class="pagination justify-content-center">
                     #if($reviews.size() > 5)
                     #set($pages = $reviews.size() / 5)
@@ -194,8 +182,8 @@
                     #set($pages = $pages + 1)
                     #end
                     #foreach($page in [1..$pages])
-                    <li class="page-item #if($currentPage == $page) active #end"><a class="page-link"
-                                                                                    href="/hotels?hotelId=$hotel.get('hotelID')&page=$page">$page</a>
+                    <li class="page-item #if($currentPage == $page) active #end">
+                        <a class="page-link" href="/hotels?hotelId=$hotel.get('hotelID')&page=$page">$page</a>
                     </li>
                     #end
                     #end
@@ -295,6 +283,21 @@
     </script>
 
     <script>
+
+    function handleFav() {
+        console.log("handleFav");
+       var hotelId = document.getElementById("hotelId").value;
+       var queryURL = "/addFav?hotelId=" + hotelId;
+       console.log(queryURL);
+       fetch(queryURL, { method: 'GET' })
+       .then(function (response) {
+           document.getElementById("heartButton").disabled = true;
+       })
+       .catch(function (error) {
+           console.log(error);
+       });
+  }
+
   function directToExpedia() {
     var expediaLink = document.getElementById("expediaLink").value;
     var hotelId =  document.getElementById("hotelId").value;
@@ -309,27 +312,22 @@
     })
   }
 
+
+
+
 <!--  map setup-->
 
      var lat = document.getElementById("lat").value;
      var lon = document.getElementById("lon").value;
-        var hotelName = document.getElementById("hotelName").value;
+     var hotelName = document.getElementById("hotelName").value;
      var map = L.map('map').setView([lat, lon], 13);
-     var url = 'https://leafletjs.com/examples/choropleth/us-states.js';
      var data = 'https://tile.openstreetmap.org/{z}/{x}/{y}.png';
-
-
-     fetch(url)
-         .then(function(response) {
-            L.tileLayer(data, {
+     L.tileLayer(data, {
                         maxZoom: 19,
                         attribution: ''
                     }).addTo(map);
-            var marker = L.marker([lat, lon]).addTo(map);
-            marker.bindPopup(hotelName).openPopup();
-            L.addMapLayer(response.json());
-         })
-
+    var marker = L.marker([lat, lon]).addTo(map);
+    marker.bindPopup(hotelName).openPopup();
     </script>
 
 </div>

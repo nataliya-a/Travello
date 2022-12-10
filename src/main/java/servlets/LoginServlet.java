@@ -27,13 +27,10 @@ public class LoginServlet extends HttpServlet {
         PrintWriter out = response.getWriter();
 
         Cookie[] cookies = request.getCookies();
+        String username = UserManager.getUsername(cookies);
 
-        if (cookies != null) {
-            for (Cookie cookie : cookies) {
-                if (cookie.getName().equals("username")) {
-                    response.sendRedirect("/search");
-                }
-            }
+        if (username != null) {
+            response.sendRedirect("/search");
         } else {
             System.out.println();
             VelocityEngine ve = (VelocityEngine) request.getServletContext().getAttribute("templateEngine");
@@ -67,23 +64,15 @@ public class LoginServlet extends HttpServlet {
         boolean flag = dbHandler.authenticateUser(username, pass);
 
         if (flag) {
+            System.out.println("User authenticated");
             Cookie userCookie = new Cookie("username", username);
-            userCookie.setMaxAge(30*60*60*24*365);
+            userCookie.setMaxAge(30*60*60*365);
             Cookie[] cookies = request.getCookies();
-            if (cookies == null) {
-                response.addCookie(userCookie);
-            } else {
-                for (Cookie cookie : cookies) {
-                    if (cookie.getName().equals("username")) {
-                        cookie.setValue(username);
-                        response.addCookie(cookie);
-                    }
-                }
-            }
+            System.out.println(cookies.length);
+            response.addCookie(userCookie);
 
-            UserManager.setLastLoggedIn(request, response);
+            UserManager.updatePreviousLogIn(request, response, username);
             response.sendRedirect("/search?username=" + username);
-
         }
         else {
             PrintWriter out = response.getWriter();
