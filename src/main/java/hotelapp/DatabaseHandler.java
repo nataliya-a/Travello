@@ -341,10 +341,9 @@ public class DatabaseHandler {
     /**
      * Gets the hotelName from the hotels table.
      */
-    public Map<String, String> getHotelName(String keyword) {
+    public Map<String, String> getHotelNames(String keyword) {
         keyword = "%" + keyword.toUpperCase() + "%";
         System.out.println(keyword);
-//        List<String> hotelName = new ArrayList<>();
         Map<String, String> matches = new HashMap<>();
         PreparedStatement statement;
         try (Connection connection = DriverManager.getConnection(uri, config.getProperty("username"), config.getProperty("password"))) {
@@ -452,35 +451,6 @@ public class DatabaseHandler {
             statement.executeUpdate();
         } catch (SQLException ex) {
             System.out.println(ex);
-        }
-    }
-
-    /**
-     * Gets the review from reviews when the hotelID and username matches.
-     */
-    public Map<String, String> getReview(String hotelId, String username) {
-        Map<String, String> review = new HashMap<>();
-        PreparedStatement statement;
-        try (Connection connection = DriverManager.getConnection(uri, config.getProperty("username"), config.getProperty("password"))) {
-
-            statement = connection.prepareStatement(PreparedStatements.GET_REVIEW_SQL);
-            statement.setString(1, hotelId);
-            statement.setString(2, username);
-            System.out.println(statement);
-            ResultSet results = statement.executeQuery();
-
-            if (results.next()) {
-                review.put("hotelID", results.getString("hotelID"));
-                review.put("reviewId", results.getString("reviewID"));
-                review.put("reviewTitle", results.getString("title"));
-                review.put("reviewText", results.getString("reviewText"));
-                review.put("username", results.getString("username"));
-                review.put("reviewRating", results.getString("ratings"));
-                review.put("reviewDate", results.getString("reviewSubmissionTime"));
-            }
-            return review;
-        } catch (SQLException e) {
-            throw new RuntimeException(e);
         }
     }
 

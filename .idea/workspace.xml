@@ -4,10 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="1306db4f-b61b-4225-94e6-3327eef60eb1" name="Changes" comment="refactor code with more docs">
+    <list default="true" id="1306db4f-b61b-4225-94e6-3327eef60eb1" name="Changes" comment="debug and more docs">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/hotelapp/utils/UserManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/hotelapp/utils/UserManager.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/hotel.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/hotel.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/hotelapp/DatabaseHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/hotelapp/DatabaseHandler.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/servlets/SearchServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/servlets/SearchServlet.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -118,13 +118,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1668725048064</updated>
-    </task>
-    <task id="LOCAL-00005" summary="LoginServlet.java created">
-      <created>1669021029136</created>
-      <option name="number" value="00005" />
-      <option name="presentableId" value="LOCAL-00005" />
-      <option name="project" value="LOCAL" />
-      <updated>1669021029136</updated>
     </task>
     <task id="LOCAL-00006" summary="RegistrationServlet.java created">
       <created>1669021055720</created>
@@ -462,7 +455,14 @@
       <option name="project" value="LOCAL" />
       <updated>1670639712388</updated>
     </task>
-    <option name="localTasksCounter" value="54" />
+    <task id="LOCAL-00054" summary="debug and more docs">
+      <created>1670640973197</created>
+      <option name="number" value="00054" />
+      <option name="presentableId" value="LOCAL-00054" />
+      <option name="project" value="LOCAL" />
+      <updated>1670640973198</updated>
+    </task>
+    <option name="localTasksCounter" value="55" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -477,7 +477,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="xml files" />
     <MESSAGE value="refactored HTML pages" />
     <MESSAGE value="addressed code review comments" />
     <MESSAGE value="refactor code base for better readability" />
@@ -502,7 +501,8 @@
     <MESSAGE value="refactored servlets to fix issues with SQL databse" />
     <MESSAGE value="clean code as per guidance" />
     <MESSAGE value="refactor code with more docs" />
-    <option name="LAST_COMMIT_MESSAGE" value="refactor code with more docs" />
+    <MESSAGE value="debug and more docs" />
+    <option name="LAST_COMMIT_MESSAGE" value="debug and more docs" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

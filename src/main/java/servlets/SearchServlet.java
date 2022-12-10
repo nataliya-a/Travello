@@ -70,7 +70,7 @@ public class SearchServlet extends HttpServlet {
 
         search = StringEscapeUtils.escapeHtml4(search);
 
-        Map<String, String> hotelsWithID = db.getHotelName(search);
+        Map<String, String> hotelsWithID = db.getHotelNames(search);
 
 
         VelocityEngine ve = (VelocityEngine) request.getServletContext().getAttribute("templateEngine");
