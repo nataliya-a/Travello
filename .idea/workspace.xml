@@ -4,23 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="1306db4f-b61b-4225-94e6-3327eef60eb1" name="Changes" comment="refactored servlets to fix issues with SQL databse">
+    <list default="true" id="1306db4f-b61b-4225-94e6-3327eef60eb1" name="Changes" comment="clean code as per guidance">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/hotelapp/utils/UserManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/hotelapp/utils/UserManager.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/servlets/AddFavServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/servlets/AddFavServlet.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/servlets/LoginServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/servlets/LoginServlet.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/servlets/LogoutServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/servlets/LogoutServlet.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/servlets/MyProfileServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/servlets/MyProfileServlet.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/servlets/SearchServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/servlets/SearchServlet.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/editReview.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/editReview.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/getHotels.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/getHotels.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/home.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/home.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/hotel.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/hotel.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/login.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/login.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/myprofile.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/myprofile.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/navbar.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/nav.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/register.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/register.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/search.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/search.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -131,13 +117,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1668725048064</updated>
-    </task>
-    <task id="LOCAL-00003" summary="Class DatabaseHandler created">
-      <created>1669020857091</created>
-      <option name="number" value="00003" />
-      <option name="presentableId" value="LOCAL-00003" />
-      <option name="project" value="LOCAL" />
-      <updated>1669020857091</updated>
     </task>
     <task id="LOCAL-00004" summary="Classes Hotel, HotelData and HotelParser imported from previous projects">
       <created>1669020915641</created>
@@ -475,7 +454,14 @@
       <option name="project" value="LOCAL" />
       <updated>1670206306265</updated>
     </task>
-    <option name="localTasksCounter" value="52" />
+    <task id="LOCAL-00052" summary="clean code as per guidance">
+      <created>1670638178104</created>
+      <option name="number" value="00052" />
+      <option name="presentableId" value="LOCAL-00052" />
+      <option name="project" value="LOCAL" />
+      <updated>1670638178108</updated>
+    </task>
+    <option name="localTasksCounter" value="53" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -490,7 +476,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="EditReviewServlet.java and editReview.html created" />
     <MESSAGE value="hotel.html created" />
     <MESSAGE value="xml files" />
     <MESSAGE value="refactored HTML pages" />
@@ -515,7 +500,8 @@
     <MESSAGE value="changes to HotelData.java" />
     <MESSAGE value="changes hotel.html for the frontend to look better" />
     <MESSAGE value="refactored servlets to fix issues with SQL databse" />
-    <option name="LAST_COMMIT_MESSAGE" value="refactored servlets to fix issues with SQL databse" />
+    <MESSAGE value="clean code as per guidance" />
+    <option name="LAST_COMMIT_MESSAGE" value="clean code as per guidance" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

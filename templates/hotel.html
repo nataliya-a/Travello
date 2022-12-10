@@ -173,14 +173,17 @@
             #else
 
             #set($i = 0)
-
+            <!--   bootstrap documentation: https://getbootstrap.com/docs/4.0/components/pagination/-->
             <nav aria-label="nav">
                 <ul class="pagination justify-content-center">
                     #if($reviews.size() > 5)
                     #set($pages = $reviews.size() / 5)
+                    #end
+                    <!-- we have more than divisible of 5 pages, need one extra page to display-->
                     #if($reviews.size() % 5 != 0)
                     #set($pages = $pages + 1)
                     #end
+
                     #foreach($page in [1..$pages])
                     <li class="page-item #if($currentPage == $page) active #end">
                         <a class="page-link" href="/hotels?hotelId=$hotel.get('hotelID')&page=$page">$page</a>
@@ -191,12 +194,19 @@
                 </ul>
             </nav>
 
-            #set($start = ($currentPage - 1) * 5)
-            #set($end = $start + 4)
-            #if ($end > $reviews.size())
-            #set($end = $reviews.size() - 1)
+            <!-- need this in case currentPage + 4 exceeds reviews size-->
+            #set($reviewsSetEnd = $reviews.size() - 1)
+            <!--  display 5 records per page; since it's 0 indexed, we need to adjust for that by substracting 5 extra ones   -->
+            #set($beginIndex = $currentPage * 5 - 5)
+            #set($normalIndexEndForCurrentPage = $beginIndex + 5 - 1)
+            <!-- need to set the correct index for the end; if currentPage + 5 reviews exceeds the reviews list limit -->
+            <!-- we use the reviews size as the upper limit -->
+            #if($normalIndexEndForCurrentPage > $reviews.size())
+                #set($endIndex = $reviewsSetEnd)
+            #else
+                #set($endIndex = $normalIndexEndForCurrentPage)
             #end
-            #foreach($i in [$start..$end])
+            #foreach($i in [$$beginIndex..$endIndex])
             #set($review = $reviews.get($i))
             <h4 align="justify">$review.get("reviewTitle")</h4>
             <p align="justify"><b>Review </b> by <b style="color: #018AE6;">$review.get("username")</b> on <b>$review.get("reviewDate")</b>
@@ -222,7 +232,7 @@
             #end
             <br>
             #end
-            #end
+
 
             </center>
 
@@ -315,17 +325,16 @@
 
 
 
-<!--  map setup-->
+<!--  map setup: https://leafletjs.com/examples/quick-start/ -->
 
      var lat = document.getElementById("lat").value;
      var lon = document.getElementById("lon").value;
      var hotelName = document.getElementById("hotelName").value;
      var map = L.map('map').setView([lat, lon], 13);
-     var data = 'https://tile.openstreetmap.org/{z}/{x}/{y}.png';
-     L.tileLayer(data, {
-                        maxZoom: 19,
-                        attribution: ''
-                    }).addTo(map);
+     L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
+        maxZoom: 19,
+        attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'
+        }).addTo(map);
     var marker = L.marker([lat, lon]).addTo(map);
     marker.bindPopup(hotelName).openPopup();
     </script>
